@@ -10,13 +10,8 @@ int main(){
 	string s;
 	cin>>s;
 	
-<<<<<<< HEAD
 	bool pell = false;
 	bool pellnot = false;
-=======
-	bool pellnot = false;
-	bool pell = false;
->>>>>>> 8ad5f26c3d494248f4e4d0b204b947083f1af17e
 	
 	int size = s.length();
 	for(int i=0; i<size/2; i++){
@@ -42,8 +37,3 @@ int main(){
 	
 	return 0;
 }
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 8ad5f26c3d494248f4e4d0b204b947083f1af17e
