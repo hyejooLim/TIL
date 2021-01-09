@@ -8,7 +8,7 @@ const int MAX = 8;
 int N, M;
 int arr[MAX];
 int result[MAX];
-bool visited[MAX]; //Áßº¹ ¼ø¿­ ¹æÁö  
+bool visited[MAX]; //ì¤‘ë³µ ìˆœì—´ ë°©ì§€  
 
 void NandM(int idx){
 	if(idx == M){
@@ -20,12 +20,12 @@ void NandM(int idx){
 	}
 
 	for(int i=0; i<N; i++){
-		//result ¹è¿­¿¡ ÀúÀåµÇÁö ¾Ê¾Ò´Ù¸é  
+		//result ë°°ì—´ì— ì €ì¥ë˜ì§€ ì•Šì•˜ë‹¤ë©´  
 		if(!visited[i]){ 
 			result[idx] = arr[i];
 			visited[i] = true;
 			NandM(idx+1);
-			visited[i] = false;	//(2)
+			visited[i] = false; //(2)
 		}
 	}
 }
@@ -39,7 +39,7 @@ int main(){
 	for(int i=0; i<N; i++)
 		cin>>arr[i];
 	
-	//»çÀü ¼øÀ¸·Î Áõ°¡ÇÏ´Â ¼ø¼­·Î Ãâ·ÂÇÏ±â À§ÇØ Á¤·Ä
+	//ì‚¬ì „ ìˆœìœ¼ë¡œ ì¦ê°€í•˜ëŠ” ìˆœì„œë¡œ ì¶œë ¥í•˜ê¸° ìœ„í•´ ì •ë ¬
 	sort(arr, arr+N);   
 	NandM(0);
 		
