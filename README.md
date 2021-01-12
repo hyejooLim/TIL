@@ -1,6 +1,6 @@
 # myLearning 📚
 
-> This repository is about that i learned today
+> This repository is about that i learned today<br/><br/>
 
 - - -
 
@@ -18,16 +18,16 @@
   
 ### `Python`
 
-- - -
+<br/><br/>
 
 ## 📂 Javascript
 ### `Study`
 - [Javascript](https://github.com/hyejooLim/myLearning/tree/main/JavaScript/Javascript)
-  1. [variable](https://github.com/hyejooLim/myLearning/blob/main/JavaScript/Javascript/variable.js) 
-  2. [operator](https://github.com/hyejooLim/myLearning/blob/main/JavaScript/Javascript/operator.js)
-  3. [function](https://github.com/hyejooLim/myLearning/blob/main/JavaScript/Javascript/function.js)
-  4. class & object
-  5. array
+  #### 1. [variable](https://github.com/hyejooLim/myLearning/blob/main/JavaScript/Javascript/variable.js) 
+  #### 2. [operator](https://github.com/hyejooLim/myLearning/blob/main/JavaScript/Javascript/operator.js)
+  #### 3. [function](https://github.com/hyejooLim/myLearning/blob/main/JavaScript/Javascript/function.js)
+  #### 4. class & object
+  #### 5. array
 
 ### `Projects`
 - [youtube UI](https://github.com/hyejooLim/myLearning/tree/main/JavaScript/youtube%20UI)
