@@ -23,8 +23,9 @@
   * [variable](https://github.com/hyejooLim/myLearning/blob/main/JavaScript/Javascript/variable.js) 
   * [operator](https://github.com/hyejooLim/myLearning/blob/main/JavaScript/Javascript/operator.js)
   * [function](https://github.com/hyejooLim/myLearning/blob/main/JavaScript/Javascript/function.js)
-  * class & object
-  * array
+  * [class](https://github.com/hyejooLim/myLearning/blob/main/JavaScript/Javascript/class.js)
+  * [object](https://github.com/hyejooLim/myLearning/blob/main/JavaScript/Javascript/object.js)
+  * [array](https://github.com/hyejooLim/myLearning/blob/main/JavaScript/Javascript/array.js)
 
 ### `Projects`
 - [youtube UI](https://github.com/hyejooLim/myLearning/tree/main/JavaScript/youtube%20UI)
