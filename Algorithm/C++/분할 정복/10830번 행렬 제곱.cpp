@@ -25,12 +25,12 @@ matrix calc(matrix a, ll exp) {
 	matrix res(N, vector<int>(N));
 	
 	for(int i=0; i<N; i++)
-		res[i][i] = 1; // ´ÜÀ§ Çà·Ä  
+		res[i][i] = 1; // ë‹¨ìœ„ í–‰ë ¬  
 	
 	if(exp == 0) 
 		return res;
 	 	
-	if(exp % 2) // Áö¼ö°¡ È¦¼öÀÎ °æ¿ì 
+	if(exp % 2) // ì§€ìˆ˜ê°€ í™€ìˆ˜ì¸ ê²½ìš° 
 		res = res * a;
 		
 	return res * calc(a * a, exp / 2);
@@ -43,14 +43,14 @@ int main(){
 	ll B;
 	cin>>N>>B;
 	
-	// N*N Å©±âÀÇ 2Â÷¿ø º¤ÅÍ  
+	// N*N í¬ê¸°ì˜ 2ì°¨ì› ë²¡í„°  
 	matrix A(N, vector<int>(N));
 	
 	for(int i=0; i<N; i++)
 		for(int j=0; j<N; j++)
 			cin>>A[i][j];
 	
-	matrix res = calc(A, B); // Çà·Ä AÀÇ BÁ¦°ö   
+	matrix res = calc(A, B); // í–‰ë ¬ Aì˜ Bì œê³±   
 	
 	for(int i=0; i<N; i++) {
 		for(int j=0; j<N; j++) {
