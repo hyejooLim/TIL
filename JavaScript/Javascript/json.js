@@ -5,6 +5,7 @@
 
 // 1. Object to JSON
 // stringify(object)
+// object를 직렬화(serialize)하여 전송 가능한 형태(JSON)로 변환
 let json = JSON.stringify(true);
 console.log(json);
 
@@ -37,6 +38,7 @@ console.log(json);
 
 // 2. JSON to Object
 // parse(json)
+// 직렬화된 파일(JSON)을 역직렬화(deserialize)하여 다시 object로 변환 
 console.clear();
 json = JSON.stringify(rabbit);
 let obj = JSON.parse(json);
