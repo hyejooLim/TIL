@@ -27,7 +27,11 @@
   * [class](https://github.com/hyejooLim/myLearning/blob/main/JavaScript/Javascript/class.js)
   * [object](https://github.com/hyejooLim/myLearning/blob/main/JavaScript/Javascript/object.js)
   * [array](https://github.com/hyejooLim/myLearning/blob/main/JavaScript/Javascript/array.js)
+  * [array-api](https://github.com/hyejooLim/myLearning/blob/main/JavaScript/Javascript/array-api.js)
   * [json](https://github.com/hyejooLim/myLearning/blob/main/JavaScript/Javascript/json.js)
+  * [callback](https://github.com/hyejooLim/myLearning/blob/main/JavaScript/Javascript/async/callback.js)
+  * [promise](https://github.com/hyejooLim/myLearning/blob/main/JavaScript/Javascript/async/promise.js)
+  * [callback-to-promise](https://github.com/hyejooLim/myLearning/blob/main/JavaScript/Javascript/async/callback-to-promise.js)
 
 ### `Projects`
 - [youtube UI](https://github.com/hyejooLim/myLearning/tree/main/JavaScript/youtube%20UI)
