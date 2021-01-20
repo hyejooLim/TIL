@@ -71,5 +71,3 @@ getHen()
   })
   .then(egg => cook(egg))
   .then((food) => console.log(food));
-
-// 5. 
