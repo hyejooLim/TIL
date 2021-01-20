@@ -73,7 +73,7 @@ const symbol1 = Symbol('id');
 const symbol2 = Symbol('id');
 console.log(symbol1 === symbol2);
 
-// 스트링이 동일할 경우, 동일한 symbol을 만들고 싶을 때 
+// 같은 id를 가졌다면, 동일한 symbol을 만들고 싶을 때 
 const gSymbol1 = Symbol.for('id');
 const gSymbol2 = Symbol.for('id');
 console.log(gSymbol1 === gSymbol2);
