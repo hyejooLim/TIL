@@ -37,7 +37,7 @@ printValue(joo, 'name');
 // 3. Property value shorthand
 const person1 = { name: 'bob', age: 7 };
 const person2 = { name: 'alice', age: 12 };
-const person3 = new Person('joo', 23); // value만 전달해주면 object를 만들어줌 
+const person3 = new Person('joo', 23); // 값만 전달해주면 object를 만들어줌 
 console.log(person3);
 
 // 4. Constructor function
