@@ -37,7 +37,7 @@ console.log(Person1.prototype);
 // joo 객체는 eyes 속성을 직접 가지고 있지 않기 때문에 eyes 속성을 찾을 때까지 상위 프로토타입을 탐색
 // 최상위인 Object의 Prototype Object까지 도달했음에도 불구하고 찾지 못했을 경우에는 undefined 리턴 
 // Prototype chain: __proto__ 속성을 통해 상위 프로토타입과 연결되어 있는 형태  
-console.log(joo.eyes); // circle 
+console.log(joo.eyes); 
 
 // 1. Class declaration
 class Person {
@@ -46,7 +46,6 @@ class Person {
         this.name = name;
         this.age = age;
     }
-
     // method
     speak() {
         console.log(`${this.name} says hello!`);
@@ -112,13 +111,14 @@ class Article {
 
 const article1 = new Article(1);
 console.log(article1.publisher1);
-console.log(article1.publisher); //undefined
+console.log(article1.publisher); // undefined
 console.log(Article.publisher);
 console.log(article1.articleNumber);
 // article1.printPublisher(); // Error
 Article.printPublisher();
 
-// 5. 
+// 5. Inheritance
+// a way for one class to extend another class 
 class Shape {
     constructor(width, height, color) {
         this.width = width;
@@ -135,16 +135,14 @@ class Shape {
     }
 }
 
-// 5. Inheritance
-// a way for one class to extend another class
 class Rectangle extends Shape {}
 class Triangle extends Shape {
     draw() {
-        super.draw(); // 부모의 메소드도 호출 
+        super.draw(); // 부모의 메소드 호출 
         console.log('🔺'); // overriding: 상속받은 부모의 메소드 재정의
     }
     getArea() {
-        return (this.width * this.height) / 2; // 다형성: 부모의 메소드 구현 
+        return (this.width * this.height) / 2; // 다형성: 부모의 메소드 구현 부분 
     }
 }
 
