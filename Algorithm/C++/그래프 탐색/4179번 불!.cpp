@@ -7,8 +7,8 @@ int r, c;
 string maze[MAX]; 
 int dist1[MAX][MAX]; // 불의 전파 시간  
 int dist2[MAX][MAX]; // 지훈이의 탈출 시간  
-queue<pair<int, int>> q1; // 불의 전파  
-queue<pair<int, int>> q2; // 지훈이의 이동  
+queue<pair<int, int>> q1; // 불의 bfs를 위함   
+queue<pair<int, int>> q2; // 지훈이의 bfs를 위함    
 
 typedef struct {
 	int x, y;
@@ -31,7 +31,7 @@ void fire() {
 				continue;
 			 
 			 // 벽이거나 이미 불이 확산됐다면  
-			if(maze[nx][ny] == '#' || dist1[nx][ny] != -1) // 벽이라면 못감  
+			if(maze[nx][ny] == '#' || dist1[nx][ny] != -1)   
 				continue;
       
       // 아직 불이 확산되지 않았다면  
@@ -87,17 +87,17 @@ int main(){
 		
 	for(int i=0; i<r; i++) {
 		for(int j=0; j<c; j++) {
-			if(maze[i][j] == 'J') {
-				q2.push({i, j});
-				dist2[i][j] = 0;
-			}
 			if(maze[i][j] == 'F') {
 				q1.push({i, j});
 				dist1[i][j] = 0;
 			}
+			if(maze[i][j] == 'J') {
+				q2.push({i, j});
+				dist2[i][j] = 0;
+			}
 		}
 	}
-			
+		
 	fire(); // 불의 전파 시간 구하기 			
 	escape(); // 지훈이의 탈출  
 	
