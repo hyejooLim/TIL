@@ -7,44 +7,68 @@ int N;
 int cnt;
 int house[MAX][MAX];
 
-typedef struct {
-	int x, y;
-}box;
-
-// 가로 세로 대각선  
-box moveD[3] = { {0, 1}, {1, 0}, {1, 1} };
-
 void movePipe() {
 	queue<pair<pair<int, int>, int>> q;
-	q.push({{0, 1}, 0}); // 처음 파이프는 항상 가로 파이프
+	q.push({{0, 1}, 1}); // 처음 파이프는 항상 가로 파이프
 	
 	while(!q.empty()) {
 		int x = q.front().first.first;
 		int y = q.front().first.second;
-		int dir = q.front().second; // 파이프의 방향: 0 가로 1 세로 2 대각선 
+		int dir = q.front().second; // 파이프의 방향: 1 가로 2 세로 3 대각선 
 		q.pop();
 		
 		// 현재 좌표가 (n-1, n-1)에 도달하면   
 		if(x == N-1 && y == N-1)
 			cnt++;
 		
-		for(int i=0; i<3; i++) {
-			// 가로 -> 세로 / 세로 -> 가로 불가능  
-			if((i == 0 && dir == 1) || (i == 1 && dir == 0))
-				continue;
-				
-			int nx = x + moveD[i].x;
-			int ny = y + moveD[i].y;
+		// 가로 파이프이면  
+		if(dir == 1) {
+			// 가로 파이프로 놓을 수 있는지 확인 
+			if(y+1<N && house[x][y+1] == 0)   
+				q.push({{x, y+1}, 1});
 			
-			if(N<=nx || N<=ny || house[nx][ny] == 1)
-				continue;
-			
-			// 대각선인 경우 추가 확인 
-			if(i == 2 && (house[nx][ny-1] == 1 || house[nx-1][ny] == 1))
-				continue;
-
-			q.push({{nx, ny}, i});
+			// 대각선 파이프로 놓을 수 있는지 확인
+			if(x+1<N && y+1<N) { 
+				if(house[x][y+1] == 1 || house[x+1][y] == 1 || house[x+1][y+1] == 1)
+					continue;
+			 
+				q.push({{x+1, y+1}, 3});
+			}  
 		}
+		
+		// 세로 파이프이면 
+		else if(dir == 2) {
+			// 세로 파이프로 놓을 수 있는지 확인  
+			if(x+1<N && house[x+1][y] == 0)
+				q.push({{x+1, y}, 2}); 
+			
+			// 대각선 파이프로 놓을 수 있는지 확인 
+			if(x+1<N && y+1<N) { 
+				if(house[x+1][y] == 1 || house[x+1][y+1] == 1 || house[x][y+1] == 1)
+					continue;
+			
+				q.push({{x+1, y+1}, 3});  	
+			}
+		}
+		
+		// 대각선 파이프이면  
+		else if(dir == 3) {
+			// 가로 파이프로 놓을 수 있는지 확인 
+			if(y+1<N && house[x][y+1] == 0)
+				q.push({{x, y+1}, 1}); 
+		
+			// 세로 파이프로 놓을 수 있는지 확인 
+			if(x+1<N && house[x+1][y] == 0)
+				q.push({{x+1, y}, 2}); 
+			
+			// 대각선 파이프로 놓을 수 있는지 확인 
+			if(x+1<N && y+1<N) {
+				if(house[x+1][y] == 1 || house[x+1][y+1] == 1 || house[x][y+1] == 1)
+					continue;
+				
+				q.push({{x+1, y+1}, 3});  
+			}
+		} 
 	}
 }
 
