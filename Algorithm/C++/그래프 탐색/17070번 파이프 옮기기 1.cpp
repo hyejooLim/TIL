@@ -17,7 +17,7 @@ void movePipe() {
 		int dir = q.front().second; // 파이프의 방향: 1 가로 2 세로 3 대각선 
 		q.pop();
 		
-		// 현재 좌표가 (n, n)에 도달하면   
+		// 현재 좌표가 (n-1, n-1)에 도달하면   
 		if((x == N-1 && y == N-2 && dir == 1) || 
 			 (x == N-2 && y == N-1 && dir == 2) || 
 			 (x == N-2 && y == N-2 && dir == 3))
