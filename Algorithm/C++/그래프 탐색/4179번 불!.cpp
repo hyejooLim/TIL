@@ -5,16 +5,16 @@ using namespace std;
 
 int r, c;
 string maze[MAX]; 
-int dist1[MAX][MAX]; // ºÒÀÇ ÀüÆÄ ½Ã°£  
-int dist2[MAX][MAX]; // ÁöÈÆÀÌÀÇ Å»Ãâ ½Ã°£  
-queue<pair<int, int>> q1; // ºÒÀÇ bfs¸¦ À§ÇÔ   
-queue<pair<int, int>> q2; // ÁöÈÆÀÌÀÇ bfs¸¦ À§ÇÔ    
+int dist1[MAX][MAX]; // ë¶ˆì˜ ì „íŒŒ ì‹œê°„  
+int dist2[MAX][MAX]; // ì§€í›ˆì´ì˜ íƒˆì¶œ ì‹œê°„  
+queue<pair<int, int>> q1; // ë¶ˆì˜ bfsë¥¼ ìœ„í•¨   
+queue<pair<int, int>> q2; // ì§€í›ˆì´ì˜ bfsë¥¼ ìœ„í•¨    
 
 typedef struct {
 	int x, y;
 }box;
 
-// »ó ÇÏ ÁÂ ¿ì  
+// ìƒ í•˜ ì¢Œ ìš°  
 box moveD[4] = { {-1, 0}, {1, 0}, {0, -1}, {0, 1} };
 
 void fire() {
@@ -30,13 +30,13 @@ void fire() {
 			if(nx<0 || r<=nx || ny<0 || c<=ny)
 				continue;
 			 
-			 // º®ÀÌ°Å³ª ÀÌ¹Ì ºÒÀÌ È®»êµÆ´Ù¸é  
+			 // ë²½ì´ê±°ë‚˜ ì´ë¯¸ ë¶ˆì´ í™•ì‚°ëë‹¤ë©´  
 			if(maze[nx][ny] == '#' || dist1[nx][ny] != -1)   
 				continue;
       
-      // ¾ÆÁ÷ ºÒÀÌ È®»êµÇÁö ¾Ê¾Ò´Ù¸é  
+      			// ì•„ì§ ë¶ˆì´ í™•ì‚°ë˜ì§€ ì•Šì•˜ë‹¤ë©´  
 			dist1[nx][ny] = dist1[x][y] + 1;
-      q1.push({nx, ny});
+      			q1.push({nx, ny});
 		}	
 	} 	                  
 } 
@@ -51,17 +51,17 @@ void escape() {
 			int nx = x + moveD[i].x;
 			int ny = y + moveD[i].y;
 			
-			// ÁöÈÆÀÌ°¡ Å»ÃâÇß´Ù¸é  
+			// ì§€í›ˆì´ê°€ íƒˆì¶œí–ˆë‹¤ë©´  
 			if(nx<0 || r<=nx || ny<0 || c<=ny) {
 				cout<<dist2[x][y] + 1;
 				return;
 			}
 			
-			// º®ÀÌ°Å³ª ÀÌ¹Ì ¹æ¹®Çß´Ù¸é  
+			// ë²½ì´ê±°ë‚˜ ì´ë¯¸ ë°©ë¬¸í–ˆë‹¤ë©´  
 			if(maze[nx][ny] == '#' || dist2[nx][ny] != -1)   
 				continue;
 			
-			// ºÒÀÌ È®»êµÇÁö ¾Ê¾Ò°Å³ª ÁöÈÆÀÌ°¡ ´õ »¡¸® ÀÌµ¿ÇÒ ¼ö ÀÖ´Ù¸é  
+			// ë¶ˆì´ í™•ì‚°ë˜ì§€ ì•Šì•˜ê±°ë‚˜ ì§€í›ˆì´ê°€ ë” ë¹¨ë¦¬ ì´ë™í•  ìˆ˜ ìˆë‹¤ë©´  
 			if(dist1[nx][ny] == -1 || dist2[x][y] + 1 < dist1[nx][ny]) {
 				dist2[nx][ny] = dist2[x][y] + 1;
 				q2.push({nx, ny});
@@ -79,7 +79,7 @@ int main(){
 	for(int i=0; i<r; i++)
 		cin>>maze[i];
 	
-	// -1·Î ÃÊ±âÈ­  
+	// -1ë¡œ ì´ˆê¸°í™”  
 	for(int i=0; i<r; i++) {
 		fill(dist1[i], dist1[i]+c, -1);
 		fill(dist2[i], dist2[i]+c, -1);
@@ -98,8 +98,8 @@ int main(){
 		}
 	}
 		
-	fire(); // ºÒÀÇ ÀüÆÄ ½Ã°£ ±¸ÇÏ±â 			
-	escape(); // ÁöÈÆÀÌÀÇ Å»Ãâ  
+	fire(); // ë¶ˆì˜ ì „íŒŒ ì‹œê°„ êµ¬í•˜ê¸° 			
+	escape(); // ì§€í›ˆì´ì˜ íƒˆì¶œ  
 	
 	return 0;
 }
