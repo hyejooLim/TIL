@@ -42,7 +42,7 @@ void movePipe() {
 			// 대각선인 경우 추가 확인 
 			if(i == 2 && (house[nx][ny-1] == 1 || house[nx-1][ny] == 1))
 				continue;
-			
+
 			q.push({{nx, ny}, i});
 		}
 	}
