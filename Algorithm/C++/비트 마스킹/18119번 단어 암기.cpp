@@ -9,20 +9,18 @@ int main(){
 	cin.tie(0);
 
 	int N, M;
-	cin>>N>>M;
-	
 	int remember = 0;
-	
-	// Ã³À½¿¡´Â ¸ðµç ¾ËÆÄºªÀ» ±â¾ïÇÏ´Â »óÅÂ  
-	for(int i=0; i<26; i++) {
+	cin>>N>>M;
+
+	// ì²˜ìŒì—ëŠ” ëª¨ë“  ì•ŒíŒŒë²³ì„ ê¸°ì–µí•˜ëŠ” ìƒíƒœ  
+	for(int i=0; i<26; i++) 
 		remember += (1 << i);
-	}
 
 	for(int i=0; i<N; i++) {
 		string s;
 		cin>>s;
 		
-		// ¹è¿­¿¡ ¹®ÀÚ¿­ ±â·Ï 
+		// ë°°ì—´ì— ë¬¸ìžì—´ ê¸°ë¡ 
 		// ex) apple 1000 1000 0001 0001   
 		for(int j=0; j<s.length(); j++) {
 			word[i] |= (1 << (s[j] - 'a'));
@@ -36,13 +34,13 @@ int main(){
 		int cnt = 0;
 		cin>>o>>x;
 		
-		// o: 1 -> x¸¦ ÀØ±â
-		// o: 2 -> x¸¦ ±â¾ïÇÏ±â    
+		// o: 1 -> xë¥¼ ìžŠê¸°
+		// o: 2 -> xë¥¼ ê¸°ì–µí•˜ê¸°    
 		remember ^= (1 << (x - 'a'));
 		
 		for(int j=0; j<N; j++) {
 			
-			// remember AND ´Ü¾î 
+			// remember AND ë‹¨ì–´ 
 			if((remember & word[j]) != word[j])
 				continue;
 			
@@ -50,6 +48,5 @@ int main(){
 		}
 		cout<<cnt<<"\n";
 	}
-	
 	return 0;
 }
