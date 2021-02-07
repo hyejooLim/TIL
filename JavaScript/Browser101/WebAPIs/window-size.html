@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Window Size</title>
+    <style>
+      .box {
+        background-color: pink;
+        display: inline-block;
+        font-size: 20px;
+        padding: 10px;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+        window.screen : 모니터 전체 크기 (불변)
+        window.outer : 탭과 url을 포함한 창 크기
+        window.inner : 탭과 url을 제외한 창 크기 (스크롤 포함)
+        documentElement.client : 탭과 url을 제외한 창 크기 (스크롤 제외) 
+    -->
+    <div class="box"></div>
+    <script>
+      const box = document.querySelector('.box');
+      function updateBox() {
+        box.innerHTML = `
+          window.screen: ${window.screen.width}, ${window.screen.height} </br> 
+          window.outer: ${window.outerWidth}, ${window.outerHeight} </br>
+          window.inner: ${window.innerWidth}, ${window.innerHeight} </br>
+          documentElement.client: ${document.documentElement.clientWidth}, ${document.documentElement.clientHeight}
+          `;
+      }
+      // 브라우저 창 크기가 변경될 때
+      window.addEventListener('resize', () => {
+        updateBox();
+      });
+      updateBox();
+    </script>
+  </body>
+</html>

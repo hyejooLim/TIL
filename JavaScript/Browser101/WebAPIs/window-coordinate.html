@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coordinate</title>
+    <style>
+      div {
+        background: beige;
+        width: 100px;
+        height: 100px;
+        margin-bottom: 5px;
+      }
+
+      .special {
+        background: #5bd0b2;
+      }
+
+      .buttons {
+        position: fixed;
+        top: 5px;
+        right: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <!--
+        clientX clientY : 브라우저 창에서 시작 
+        pageX pageY : 페이지의 상위에서 시작 
+    -->
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div class="special"></div>
+    <div></div>
+    <div></div>
+    <aside class="buttons">
+      <button class="scroll-by">scroll by 50px(y)</button>
+      <button class="scroll-to">scroll to 50px(y)</button>
+      <button class="scroll-into">scroll into special</button>
+    </aside>
+
+    <script>
+      const special = document.querySelector('.special');
+
+      special.addEventListener('click', (e) => {
+        const domRect = special.getBoundingClientRect();
+        console.log(domRect);
+        console.log(`client: ${e.clientX}, ${e.clientY}`);
+        console.log(`page: ${e.pageX}, ${e.pageY}`);
+      });
+
+      const scrollBy = document.querySelector('.scroll-by');
+      const scrollTo = document.querySelector('.scroll-to');
+      const scrollInto = document.querySelector('.scroll-into');
+
+      scrollBy.addEventListener('click', () => {
+        window.scrollBy(0, 50);
+        // window.scrollBy({top: 50, left: 0, behavior: "smooth"});
+      });
+
+      scrollTo.addEventListener('click', () => {
+        window.scrollTo(0, 50);
+      });
+
+      scrollInto.addEventListener('click', () => {
+        special.scrollIntoView();
+      });
+    </script>
+  </body>
+</html>

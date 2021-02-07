@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Load</title>
+    <script src="test.js" defer></script>
+  </head>
+  <body>
+    <script>
+      // html이 완료되면 호출
+      window.addEventListener('DOMContentLoaded', () => {
+          console.log('DOMContentLoaded');
+      });
+      // 페이지에서 쓰여지는 것들(resources)이 모두 완료되면 호출 (css, images)
+      window.addEventListener('load', () => {
+        console.log('load');
+      });
+      // 페이지가 unload 되기 전에 호출
+      window.addEventListener('beforeunload', () => {
+        console.log('beforeunload');
+      });
+      // resource가 모두 unload 되면 호출
+      window.addEventListener('unload', () => {
+        console.log('unload');
+      });
+    </script>
+  </body>
+</html>
