@@ -34,7 +34,6 @@
   * [promise](https://github.com/hyejooLim/myLearning/blob/main/JavaScript/Javascript/async/promise.js)
   * [callback-to-promise](https://github.com/hyejooLim/myLearning/blob/main/JavaScript/Javascript/async/callback-to-promise.js)
   
-</br>
 
 #### React 
   * [add_minus](https://github.com/hyejooLim/myLearning/blob/main/JavaScript/React/add_minus.js)
