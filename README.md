@@ -21,7 +21,7 @@
 
 ## 📂 JavaScript
 ### `Study`
-- [Javascript](https://github.com/hyejooLim/myLearning/tree/main/JavaScript/Javascript)
+#### Javascript
   * [variable](https://github.com/hyejooLim/myLearning/blob/main/JavaScript/Javascript/variable.js) 
   * [operator](https://github.com/hyejooLim/myLearning/blob/main/JavaScript/Javascript/operator.js)
   * [function](https://github.com/hyejooLim/myLearning/blob/main/JavaScript/Javascript/function.js)
@@ -34,10 +34,14 @@
   * [promise](https://github.com/hyejooLim/myLearning/blob/main/JavaScript/Javascript/async/promise.js)
   * [callback-to-promise](https://github.com/hyejooLim/myLearning/blob/main/JavaScript/Javascript/async/callback-to-promise.js)
   
-<br/>
+</br>
 
-- [React](https://github.com/hyejooLim/myLearning/tree/main/JavaScript/React) 
+#### React 
   * [add_minus](https://github.com/hyejooLim/myLearning/blob/main/JavaScript/React/add_minus.js)
+
+
+#### Browser101 
+  * [WebAPIs](https://github.com/hyejooLim/myLearning/tree/main/JavaScript/Browser101/WebAPIs)
   
 <br/><br/>
 
