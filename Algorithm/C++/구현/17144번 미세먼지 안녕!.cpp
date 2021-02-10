@@ -126,7 +126,7 @@ int main(){
 		}
 	}
 	
-	// T초동안 수행  
+	// T초 동안 수행  
 	for(int i=0; i<T; i++) {
 		for(int j=0; j<R; j++)
 			for(int k=0; k<C; k++)
