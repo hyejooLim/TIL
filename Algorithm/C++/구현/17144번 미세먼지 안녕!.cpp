@@ -13,11 +13,11 @@ typedef struct {
 	int x, y;
 }box;
 
-// »ó ÇÏ ÁÂ ¿ì  
+// ìƒ í•˜ ì¢Œ ìš°  
 box moveD[4] = { {-1, 0}, {1, 0}, {0, -1}, {0, 1} };
   
-int cw[4] = { 3, 1, 2, 0 }; // ½Ã°è ¹æÇâ 
-int ccw[4] = { 3, 0, 2, 1 }; // ¹İ½Ã°è ¹æÇâ
+int cw[4] = { 3, 1, 2, 0 }; // ì‹œê³„ ë°©í–¥ 
+int ccw[4] = { 3, 0, 2, 1 }; // ë°˜ì‹œê³„ ë°©í–¥
 
 void spreadDust() {
 	while(!q.empty()) {
@@ -25,8 +25,8 @@ void spreadDust() {
 		int curY = q.front().second;
 		q.pop();
 		
-		int cnt = 0; // ¹Ì¼¼¸ÕÁö È®»ê ¹æÇâÀÇ °³¼ö    
-		int amount = copyRoom[curX][curY] / 5; // ¹Ì¼¼¸ÕÁö È®»ê¾ç 
+		int cnt = 0; // ë¯¸ì„¸ë¨¼ì§€ í™•ì‚° ë°©í–¥ì˜ ê°œìˆ˜    
+		int amount = copyRoom[curX][curY] / 5; // ë¯¸ì„¸ë¨¼ì§€ í™•ì‚°ì–‘ 
 		
 		for(int i=0; i<4; i++) {
 			int nxtX = curX + moveD[i].x;
@@ -35,19 +35,19 @@ void spreadDust() {
 			if(nxtX<0 || R<=nxtX || nxtY<0 || C<=nxtY)
 				continue;
 			
-			// °ø±â Ã»Á¤±â°¡ ÀÖÀ¸¸é  
+			// ê³µê¸° ì²­ì •ê¸°ê°€ ìˆìœ¼ë©´  
 			if(copyRoom[nxtX][nxtY] == -1)
 				continue;
 			
-			// ¹Ì¼¼¸ÕÁö È®»ê
+			// ë¯¸ì„¸ë¨¼ì§€ í™•ì‚°
 			room[nxtX][nxtY] += amount;   
 			cnt++;
 		}
-		// ÇöÀç Ä­ÀÇ ¹Ì¼¼¸ÕÁö ¾ç °¨¼Ò  
+		// í˜„ì¬ ì¹¸ì˜ ë¯¸ì„¸ë¨¼ì§€ ì–‘ ê°ì†Œ  
 		room[curX][curY] -= amount*cnt; 
 	}
 	
-	// ¹Ì¼¼¸ÕÁö°¡ È®»êµÈ ¹è¿­ º¹»ç   
+	// ë¯¸ì„¸ë¨¼ì§€ê°€ í™•ì‚°ëœ ë°°ì—´ ë³µì‚¬   
 	for(int i=0; i<R; i++)
 		for(int j=0; j<C; j++)
 			copyRoom[i][j] = room[i][j];
@@ -56,21 +56,21 @@ void spreadDust() {
 void workMachine() {
 	int curX = airX; 
 	int curY = airY + 1; 
-	room[curX][curY] = 0; // ¹Ğ·Á³ª¼­ 0ÀÌ µÊ 
+	room[curX][curY] = 0; // ë°€ë ¤ë‚˜ì„œ 0ì´ ë¨ 
 	
 	for(int i=0; i<4; i++) {
 		while(1) {
 			int nxtX = curX + moveD[ccw[i]].x;
 			int nxtY = curY + moveD[ccw[i]].y;
 			
-			// À§ÂÊ ¹Ì¼¼¸ÕÁö°¡ ¸ğµÎ ÀÌµ¿Çß´Ù¸é   
+			// ìœ„ìª½ ë¯¸ì„¸ë¨¼ì§€ê°€ ëª¨ë‘ ì´ë™í–ˆë‹¤ë©´   
 			if(nxtX == airX && nxtY == airY)
 				break;
 			
 			if(nxtX<0 || R<=nxtX || nxtY<0 || C<=nxtY)
 				break;
 			
-			// ¹Ì¼¼¸ÕÁö ÀÌµ¿  
+			// ë¯¸ì„¸ë¨¼ì§€ ì´ë™  
 			room[nxtX][nxtY] = copyRoom[curX][curY];
 			curX = nxtX;
 			curY = nxtY; 
@@ -79,21 +79,21 @@ void workMachine() {
 	
 	curX = airX2;
 	curY = airY2 + 1;
-	room[curX][curY] = 0; // ¹Ğ·Á³ª¼­ 0ÀÌ µÊ
+	room[curX][curY] = 0; // ë°€ë ¤ë‚˜ì„œ 0ì´ ë¨
 	
 	for(int i=0; i<4; i++) {
 		while(1) {
 			int nxtX = curX + moveD[cw[i]].x;
 			int nxtY = curY + moveD[cw[i]].y;
 			
-			// ¾Æ·¡ÂÊ ¹Ì¼¼¸ÕÁö°¡ ¸ğµÎ ÀÌµ¿Çß´Ù¸é  
+			// ì•„ë˜ìª½ ë¯¸ì„¸ë¨¼ì§€ê°€ ëª¨ë‘ ì´ë™í–ˆë‹¤ë©´  
 			if(nxtX == airX2 && nxtY == airY2)
 				break;
 				
 			if(nxtX<0 || R<=nxtX || nxtY<0 || C<=nxtY)
 				break;
 			
-			// ¹Ì¼¼¸ÕÁö ÀÌµ¿  
+			// ë¯¸ì„¸ë¨¼ì§€ ì´ë™  
 			room[nxtX][nxtY] = copyRoom[curX][curY];
 			curX = nxtX;
 			curY = nxtY;
@@ -112,7 +112,7 @@ int main(){
 		for(int j=0; j<C; j++) {
 			cin>>room[i][j];
 			
-			// °ø±âÃ»Á¤±â°¡ ÀÖ´Ù¸é  
+			// ê³µê¸°ì²­ì •ê¸°ê°€ ìˆë‹¤ë©´  
 			if(room[i][j] == -1) {
 				if(airX == 0) {
 					airX = i;
@@ -126,7 +126,7 @@ int main(){
 		}
 	}
 	
-	// TÃÊ µ¿¾È ¼öÇà  
+	// Tì´ˆ ë™ì•ˆ ìˆ˜í–‰  
 	for(int i=0; i<T; i++) {
 		for(int j=0; j<R; j++)
 			for(int k=0; k<C; k++)
@@ -137,8 +137,8 @@ int main(){
 			for(int k=0; k<C; k++)
 				copyRoom[j][k] = room[j][k];
 	
-		spreadDust();	// ¹Ì¼¼¸ÕÁö È®»ê  
-		workMachine(); // °ø±âÃ»Á¤±â ÀÛµ¿  
+		spreadDust(); // ë¯¸ì„¸ë¨¼ì§€ í™•ì‚°  
+		workMachine(); // ê³µê¸°ì²­ì •ê¸° ì‘ë™  
 	}	
 	
 	int result = 0;
