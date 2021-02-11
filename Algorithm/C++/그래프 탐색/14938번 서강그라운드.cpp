@@ -6,15 +6,15 @@ using namespace std;
 int m, sum;
 int arr[MAX];   
 bool visited[MAX];
-vector<pair<int, int>> node[MAX]; // Áö¿ª °£ ¿¬°á Á¤º¸   
+vector<pair<int, int>> node[MAX]; // ì§€ì—­ ê°„ ì—°ê²° ì •ë³´   
 
 void getItems(int area, int dist) {    
 	for(int i=0; i<node[area].size(); i++) {
 		int nxtArea = node[area][i].first; 
 		int nxtDist = node[area][i].second; 
-	  int item = arr[nxtArea]; // ´ÙÀ½ Áö¿ªÀÇ ¾ÆÀÌÅÛ °³¼ö  
+	        int item = arr[nxtArea]; // ë‹¤ìŒ ì§€ì—­ì˜ ì•„ì´í…œ ê°œìˆ˜  
 	
-		// °Å¸®°¡ ¼ö»ö ¹üÀ§º¸´Ù ÀÛ´Ù¸é   
+		// ê±°ë¦¬ê°€ ìˆ˜ìƒ‰ ë²”ìœ„ë³´ë‹¤ ìž‘ë‹¤ë©´   
 		if(dist + nxtDist <= m) {
 			if(!visited[nxtArea]) {
 				visited[nxtArea] = true;
@@ -38,21 +38,20 @@ int main(){
 		int a, b, l; 
 		cin>>a>>b>>l; 
 		
-		// ¾ç¹æÇâ ¿¬°á  
+		// ì–‘ë°©í–¥ ì—°ê²°  
 		node[a].push_back({ b, l });
 		node[b].push_back({ a, l });
 	}
 	
 	int result = 0;
 	for(int i=1; i<=n; i++) {
-		// ÀÚ±â ¿µ¿ªÀÇ ¾ÆÀÌÅÛ È¹µæ
+		// ìžê¸° ì˜ì—­ì˜ ì•„ì´í…œ íšë“
 		sum = arr[i];   
 		memset(visited, false, sizeof(visited));
 		visited[i] = true;
 		getItems(i, 0); 
 		result = max(result, sum);
 	}
-	
 	cout<<result;
 	return 0;
 }
