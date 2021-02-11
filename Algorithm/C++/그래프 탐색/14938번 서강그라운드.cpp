@@ -1,26 +1,36 @@
 #include <bits/stdc++.h>
 #define MAX 101
+#define INF 987654321
 
 using namespace std;
 
-int m, sum;
-int arr[MAX];   
-bool visited[MAX];
-vector<pair<int, int>> node[MAX]; // 지역 간 연결 정보   
+int n, m;
+int arr[MAX];  
+int dist[MAX];
+vector<pair<int, int>> v[MAX]; // 지역 간 연결 정보   
 
-void getItems(int area, int dist) {    
-	for(int i=0; i<node[area].size(); i++) {
-		int nxtArea = node[area][i].first; 
-		int nxtDist = node[area][i].second; 
-	  int item = arr[nxtArea]; // 다음 지역의 아이템 개수  
+void dijkstra(int start) {    
+	queue<int> q;
+	for(int i=1; i<=n; i++)
+		dist[i] = INF;
 	
-		// 거리가 수색 범위보다 작다면   
-		if(dist + nxtDist <= m) {
-			if(!visited[nxtArea]) {
-				visited[nxtArea] = true;
-				sum += item;
+	// 낙하 지역의 거리는 0  
+	dist[start] = 0;
+	q.push(start);
+	
+	while(!q.empty()) {
+		int node = q.front();
+		q.pop();
+		
+		for(int i=0; i<v[node].size(); i++) {
+			int nxtNode = v[node][i].first;
+			int weight = v[node][i].second;
+			
+			// 최단경로라면  
+			if(dist[node] + weight < dist[nxtNode]) {
+				dist[nxtNode] = dist[node] + weight;
+				q.push(nxtNode);
 			}
-			getItems(nxtArea, dist + nxtDist); 
 		}
 	}
 }
@@ -29,7 +39,7 @@ int main(){
 	ios::sync_with_stdio(0);
 	cin.tie(0);
 	
-	int n, r; 
+	int r; 
 	cin>>n>>m>>r;   
 	for(int i=1; i<=n; i++) 
 		cin>>arr[i];   
@@ -39,20 +49,22 @@ int main(){
 		cin>>a>>b>>l; 
 		
 		// 양방향 연결  
-		node[a].push_back({ b, l });
-		node[b].push_back({ a, l });
+		v[a].push_back({ b, l });
+		v[b].push_back({ a, l });
 	}
 	
 	int result = 0;
 	for(int i=1; i<=n; i++) {
-		// 자기 영역의 아이템 획득
-		sum = arr[i];   
-		memset(visited, false, sizeof(visited));
-		visited[i] = true;
-		getItems(i, 0); 
+		dijkstra(i); // 다익스트라 
+		
+		int sum = 0;
+		for(int i=1; i<=n; i++) 
+		  // 수색 범위보다 작거나 같다면  
+			if(dist[i] <= m)
+				sum += arr[i]; // 아이템 개수 더하기  
+	
 		result = max(result, sum);
 	}
-	
 	cout<<result;
 	return 0;
 }
