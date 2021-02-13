@@ -44,6 +44,11 @@
   
 <br/><br/>
 
-### `Projects`
+### `Mini Projects`
+
 - [youtube UI](https://github.com/hyejooLim/myLearning/tree/main/JavaScript/youtube%20UI)
 : 반응형 유튜브 UI와 간단한 동작 추가  
+- [coordinates 007](https://github.com/hyejooLim/myLearning/tree/main/JavaScript/Browser101/WebAPIs/coordinates%20007)
+: 마우스 움직임에 따라 좌표가 표시됨
+- [rabbit](https://github.com/hyejooLim/myLearning/tree/main/JavaScript/Browser101/WebAPIs/rabbit)
+: 버튼을 누르면 토끼가 있는 위치로 이동함
