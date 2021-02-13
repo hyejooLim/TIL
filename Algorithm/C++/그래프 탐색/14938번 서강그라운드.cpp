@@ -7,14 +7,14 @@ using namespace std;
 int n, m;
 int arr[MAX];  
 int dist[MAX];
-vector<pair<int, int>> v[MAX]; // Áö¿ª °£ ¿¬°á Á¤º¸   
+vector<pair<int, int>> v[MAX]; // ì§€ì—­ ê°„ ì—°ê²° ì •ë³´   
 
 void dijkstra(int start) {    
 	queue<int> q;
 	for(int i=1; i<=n; i++)
 		dist[i] = INF;
 	
-	// ³«ÇÏ Áö¿ªÀÇ °Å¸®´Â 0  
+	// ë‚™í•˜ ì§€ì—­ì˜ ê±°ë¦¬ëŠ” 0  
 	dist[start] = 0;
 	q.push(start);
 	
@@ -26,7 +26,7 @@ void dijkstra(int start) {
 			int nxtNode = v[node][i].first;
 			int weight = v[node][i].second;
 			
-			// ÃÖ´Ü°æ·Î¶ó¸é  
+			// ìµœë‹¨ê²½ë¡œë¼ë©´  
 			if(dist[node] + weight < dist[nxtNode]) {
 				dist[nxtNode] = dist[node] + weight;
 				q.push(nxtNode);
@@ -48,20 +48,20 @@ int main(){
 		int a, b, l; 
 		cin>>a>>b>>l; 
 		
-		// ¾ç¹æÇâ ¿¬°á  
+		// ì–‘ë°©í–¥ ì—°ê²°  
 		v[a].push_back({ b, l });
 		v[b].push_back({ a, l });
 	}
 	
 	int result = 0;
 	for(int i=1; i<=n; i++) {
-		dijkstra(i); // ´ÙÀÍ½ºÆ®¶ó 
+		dijkstra(i); // ë‹¤ìµìŠ¤íŠ¸ë¼ 
 		
 		int sum = 0;
 		for(int i=1; i<=n; i++) 
-		  // ¼ö»ö ¹üÀ§º¸´Ù ÀÛ°Å³ª °°´Ù¸é  
+		  	// ìˆ˜ìƒ‰ ë²”ìœ„ë³´ë‹¤ ìž‘ê±°ë‚˜ ê°™ë‹¤ë©´  
 			if(dist[i] <= m)
-				sum += arr[i]; // ¾ÆÀÌÅÛ °³¼ö ´õÇÏ±â  
+				sum += arr[i]; // ì•„ì´í…œ ê°œìˆ˜ ë”í•˜ê¸°  
 	
 		result = max(result, sum);
 	}
