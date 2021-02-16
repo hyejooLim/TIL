@@ -1,0 +1,118 @@
+/* padding이나 border 사이즈가 width나 height에 포함될 수 있도록 설정 */
+* {
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0;
+  background-color: #ced3df;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.container {
+  width: 360px;
+  background-color: #f1f0f7;
+  margin: auto;
+  border-radius: 10px;
+  box-shadow: 8px 6px 6px -1px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 8px 6px 6px -1px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 8px 6px 6px -1px rgba(0, 0, 0, 0.3);
+}
+
+/* header */
+.container .logo {
+  height: 45px;
+  padding: 5px;
+  background: rgb(157, 222, 228);
+  background: linear-gradient(
+    120deg,
+    rgba(157, 222, 228, 1) 0%,
+    rgba(218, 140, 232, 1) 99%,
+    rgba(42, 203, 168, 1) 100%
+  );
+  border-radius: 10px 10px 0 0;
+  color: white;
+  font-size: 22px;
+}
+
+/* items */
+.items {
+  height: 400px;
+  overflow-y: auto; /* 리스트가 많아지면 스크롤바 생성 */
+  padding-top: 10px;
+}
+
+.item__delete {
+  transition: all 300ms ease-in;
+}
+
+.item__delete:hover {
+  color: #ff6961;
+  transform: scale(1.1);
+}
+
+.items .item__row .item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 30px;
+}
+
+.items .item__row .item__divider {
+  width: 90%;
+  height: 1px;
+  background-color: lightgray;
+  margin: auto;
+}
+
+/* footer */
+.footer {
+  background: rgb(157, 222, 228);
+  background: linear-gradient(
+    120deg,
+    rgba(157, 222, 228, 1) 0%,
+    rgba(218, 140, 232, 1) 99%,
+    rgba(42, 203, 168, 1) 100%
+  );
+  border-radius: 0 0 10px 10px;
+}
+
+.footer .footer__input {
+  width: 100%;
+  border: none;
+  outline: none;
+  height: 35px;
+  font-size: 18px;
+  padding: 0 10px;
+}
+
+.footer .footer__button {
+  width: 45px;
+  height: 45px;
+  background-color: black;
+  border-radius: 50%;
+  color: white;
+  font-size: 22px;
+  transition: transform 300ms ease-in;
+}
+
+.footer .footer__button:hover {
+  transform: scale(1.1);
+}
