@@ -4,17 +4,14 @@ const addBtn = document.querySelector('.footer__button');
 
 // 아이템 추가
 function onAdd() {
-  // 1. 사용자가 입력한 텍스트 받아오기
   const text = input.value;
   if (text === '') {
     input.focus();
     return;
   }
-  // 2. 새로운 아이템 만들기
   const item = createItem(text);
-  // 3. 새로운 아이템을 items에 추가하기 (텍스트 + 삭제 버튼)
   items.appendChild(item);
-  // 4. 인풋 초기화하기
+  item.scrollIntoView({ block: 'center' });
   input.value = '';
   input.focus();
 }
