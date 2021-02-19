@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .color {
+        background-color: aquamarine;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+      <li>6</li>
+      <li>7</li>
+      <li>8</li>
+      <li>9</li>
+      <li>10</li>
+    </ul>
+    <!--
+        Event Delegation
+        - 부모 요소는 모든 자식 요소에서 발생하는 이벤트를 들을 수 있음
+        - 유사한 방식으로 처리된 많은 요소가 있는 경우 각각에 핸들러를 할당하는 대신 공통 조상에 단일 핸들러 배치 
+        - event.target 을 통해 이벤트가 실제로 발생한 위치를 확인하고 처리
+    -->
+    <script>
+      // Bad
+      const lists = document.querySelectorAll('li');
+      lists.forEach((li) => {
+        li.addEventListener('click', () => {
+          li.classList.add('color');
+        });
+      });
+
+      // Cool
+      const ul = document.querySelector('ul');
+      ul.addEventListener('click', (event) => {
+        if (event.target.tagName === 'LI') {
+          event.target.classList.add('color');
+        }
+      });
+    </script>
+  </body>
+</html>
