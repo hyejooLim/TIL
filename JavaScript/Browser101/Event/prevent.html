@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            margin-bottom: 10px;
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <input type="checkbox" />
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <!-- 
+        preventDefault: 브라우저에서 기본적으로 발생하는 동작 취소
+        passive: true로 설정된 이벤트에서는 preventDefault를 사용할 수 없음 
+        해결 방법: passive: false로 설정 (But no recommend)
+    -->
+    <script>
+        document.addEventListener('wheel', () => {
+            event.preventDefault(); // Error 
+            console.log('scrolling');
+        })
+
+        const checkbox = document.querySelector('input');
+        checkbox.addEventListener('click', event => {
+            event.preventDefault(); // 체크 방지 
+            console.log('checked!');
+        })
+    </script>
+</body>
+</html>
