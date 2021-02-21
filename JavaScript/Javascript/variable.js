@@ -50,12 +50,15 @@ const helloApple = `hello ${apple}`; //template literals (string)
 console.log(`value: ${helloApple}, type: ${typeof helloApple}`);
 
 // boolean 
-// false: 0, null, undefined, NaN, ''
+// false: 0, -0, null, undefined, NaN, ''
 // true: any other value
 const canRead = true;
 const test = 3 < 1;
 console.log(`value: ${canRead}, type: ${typeof canRead}`);
 console.log(`value: ${test}, type: ${typeof test}`);
+
+// canRead = true 라면 뒷문장 실행 (if문과 동일) 
+canRead && console.log('I can read!');
 
 // null
 // 명확하게 넌 비어있는 empty 값이야! 라고 지정해줘야 함  
