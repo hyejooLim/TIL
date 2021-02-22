@@ -42,7 +42,6 @@
 #### 💖 Browser101 
   * [WebAPIs](https://github.com/hyejooLim/myLearning/tree/main/JavaScript/Browser101/WebAPIs)
   * [Event](https://github.com/hyejooLim/myLearning/tree/main/JavaScript/Browser101/Event)
-  * [ShoppingList](https://github.com/hyejooLim/myLearning/tree/main/JavaScript/Browser101/ShoppingList)
   
 <br/><br/>
 
@@ -54,3 +53,9 @@
 : 마우스 움직임에 따라 좌표가 표시됨
 - [rabbit](https://github.com/hyejooLim/myLearning/tree/main/JavaScript/Browser101/WebAPIs/rabbit)
 : 버튼을 누르면 토끼가 있는 위치로 이동함
+- [ShoppingList](https://github.com/hyejooLim/myLearning/tree/main/JavaScript/Browser101/ShoppingList)
+: 쇼핑 아이템을 추가하고 삭제함 
+- [Carrot](https://github.com/hyejooLim/myLearning/tree/main/JavaScript/Browser101/Carrot)
+: 제한시간 안에 모든 당근을 찾으면 게임 성공!
+
+</br>
