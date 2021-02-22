@@ -2,7 +2,7 @@
 // 간편하게 promise를 사용할 수 있는 방법
 
 // 1. async
-// 코드 블록이 promise로 바뀌게 됨 
+// 코드 블록이 promise로 바뀌게 됨
 async function fetchUser() {
   // do network request in 10 secs...
 
@@ -14,10 +14,10 @@ const user = fetchUser();
 user.then(console.log);
 console.log(user);
 
-// 2. await ✨ 
-// async 안에서만 사용 가능 (동기적으로 처리되도록 함) 
+// 2. await ✨
+// async 안에서만 사용 가능 (동기적으로 처리되도록 함)
 function delay(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 async function getApple() {
@@ -51,7 +51,7 @@ pickFruits().then(console.log);
 function pickAllFruits() {
   return Promise.all([getApple(), getBanana()])
   .then(fruits => fruits.join(' + '));
-} 
+}
 
 pickAllFruits().then(console.log);
 
@@ -62,10 +62,7 @@ function pickOnlyOne() {
 
 pickOnlyOne().then(console.log);
 
-// 
-
 // Callback to Promise
-
 class UserStorage {
   loginUser(id, password) {
     return new Promise((resolve, reject) => {
@@ -74,7 +71,7 @@ class UserStorage {
           (id === 'joo' && password === 'mint') ||
           (id === 'nimo' && password === 'fish')
         ) {
-          resolve(id); // resolve 콜백함수에 id 전달 
+          resolve(id); // resolve 콜백함수에 id 전달
         } else {
             reject(new Error('not found'));
         }
