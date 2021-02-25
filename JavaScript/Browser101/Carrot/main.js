@@ -30,7 +30,7 @@ gameBtn.addEventListener('click', () => {
         // popUpMessage.textContent = `You loose!`;
     // }
 
-    // If you all carrots in the given time
+    // If you click all carrots in the given time
     // if (sec && !score) {
         // clearInterval(num);
         // popUp.classList.remove(pop-up--hiddin);
