@@ -13,7 +13,7 @@ gameBtn.addEventListener('click', () => {
   const num = setInterval(() => {
     gameTimer.innerHTML = `00:${sec}`;
     sec--;
-Ca
+
     // If you click a carrot
     // carrot.addEventListener('click', () => gameScore.innerHTML = `${--score}`);
     
