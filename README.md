@@ -33,6 +33,7 @@
   * [callback](https://github.com/hyejooLim/myLearning/blob/main/JavaScript/Javascript/async/callback.js)
   * [promise](https://github.com/hyejooLim/myLearning/blob/main/JavaScript/Javascript/async/promise.js)
   * [callback-to-promise](https://github.com/hyejooLim/myLearning/blob/main/JavaScript/Javascript/async/callback-to-promise.js)
+  * [async](https://github.com/hyejooLim/myLearning/blob/main/JavaScript/Javascript/async/async.js)
   
 
 #### 💖 React 
