@@ -1,0 +1,72 @@
+{
+  "items": [
+    {
+      "type": "carrot",
+      "image": "img/carrot.png"
+    },
+    {
+      "type": "bug",
+      "image": "img/bug.png"
+    },
+    {
+      "type": "carrot",
+      "image": "img/carrot.png"
+    },
+    {
+      "type": "carrot",
+      "image": "img/carrot.png"
+    },
+    {
+      "type": "bug",
+      "image": "img/bug.png"
+    },
+    {
+      "type": "carrot",
+      "image": "img/carrot.png"
+    },
+    {
+      "type": "bug",
+      "image": "img/bug.png"
+    },
+    {
+      "type": "bug",
+      "image": "img/bug.png"
+    },
+    {
+      "type": "carrot",
+      "image": "img/carrot.png"
+    },
+    {
+      "type": "carrot",
+      "image": "img/carrot.png"
+    },
+    {
+      "type": "bug",
+      "image": "img/bug.png"
+    },
+    {
+      "type": "carrot",
+      "image": "img/carrot.png"
+    },
+    {
+      "type": "carrot",
+      "image": "img/carrot.png"
+    },
+    {
+      "type": "bug",
+      "image": "img/bug.png"
+    },
+    {
+      "type": "carrot",
+      "image": "img/carrot.png"
+    },
+    {
+      "type": "bug",
+      "image": "img/bug.png"
+    },
+    {
+      "type": "bug",
+      "image": "img/bug.png"
+    }
+  ]
+}
