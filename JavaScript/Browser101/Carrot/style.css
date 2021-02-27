@@ -85,7 +85,7 @@ img:hover {
   height: 140px;
   margin: auto;
   border-radius: 20px;
-  background-color: #5e5e5e90;
+  background-color: #3b3b3b90;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -108,6 +108,8 @@ img:hover {
 
 .pop-up .pop_up__message {
   margin-top: 14px;
-  font-size: 28px;
+  font-size: 30px;
+  font-weight: 500;
+  letter-spacing: 1px;
   color: white;
 }
