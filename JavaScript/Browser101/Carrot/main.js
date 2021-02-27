@@ -24,9 +24,6 @@ const popUp = document.querySelector('.pop-up');
 const popUpMessage = document.querySelector('.pop_up__message');
 const refreshBtn = document.querySelector('.pop-up__refresh');
 
-// Start from 10 seconds
-
-
 function onClickBtn(items) {
   gameBtn.addEventListener('click', () => {
     // Placed Randomly
