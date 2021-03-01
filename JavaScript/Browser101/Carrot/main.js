@@ -26,6 +26,9 @@ const refreshBtn = document.querySelector('.pop-up__refresh');
 
 function onClickBtn(items) {
   gameBtn.addEventListener('click', () => {
+    const bgm = new Audio('sound/bg.mp3');
+    bgm.play();
+
     // Placed Randomly
     displayItems(items);
     timerWork();
@@ -44,12 +47,18 @@ function onClickBtn(items) {
 
           // If you click a carrot
           if (score && value === 'carrot') {
+            const carrotPull = new Audio('sound/carrot_pull.mp3');
+            carrotPull.play();
             score--;
             gameScore.innerHTML = `${score}`;
             e.target.remove();
           }
           // If you click a bug (game over)
           if (value === 'bug') {
+            const bugPull = new Audio('sound/bug_pull.mp3');
+            bugPull.play();
+            bgm.pause();
+
             clearInterval(num);
             popUp.classList.remove('pop-up--hidden');
             popUpMessage.textContent = 'You loose! 😢';
@@ -57,6 +66,7 @@ function onClickBtn(items) {
         });
         // Time out
         if (score && sec < 0) {
+          bgm.pause();
           clearInterval(num);
           gameTimer.innerHTML = '00:00';
           popUp.classList.remove('pop-up--hidden');
@@ -64,6 +74,7 @@ function onClickBtn(items) {
         }
         // If you click all carrots in the given time
         if (!score && sec) {
+          bgm.pause();
           clearInterval(num);
           popUp.classList.remove('pop-up-hidden');
           popUpMessage.textContent = 'You Win!! 🎉';
@@ -71,6 +82,8 @@ function onClickBtn(items) {
 
         refreshBtn.addEventListener('click', () => {
           popUp.classList.add('pop-up--hidden');
+          const bgmNew = new Audio('sound/bg.mp3');
+          bgmNew.play();
           loadArray()
             .then((items) => displayItems(items))
             .then(timerWork());
