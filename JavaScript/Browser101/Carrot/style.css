@@ -10,6 +10,10 @@ button {
   cursor: pointer;
 }
 
+img {
+  transition: transform 100ms ease-in;
+}
+
 img:hover {
   transform: scale(1.1);
 }
@@ -35,12 +39,13 @@ img:hover {
 }
 
 .game .game__header .game__timer {
-  width: 150px;
+  width: 130px;
   height: 48px;
   background-color: white;
   font-size: 33px;
   border: 4px solid black;
   border-radius: 15px;
+  visibility: hidden;
 }
 
 .game .game__header .game__score {
@@ -52,6 +57,7 @@ img:hover {
   border-radius: 50%;
   color: white;
   margin-top: 30px;
+  visibility: hidden;
 }
 
 .game .game__header .game__btn {
@@ -77,6 +83,7 @@ img:hover {
   width: 100%;
   height: 100%;
   margin-top: 50px;
+  position: relative;
 }
 
 /* Pop-up */
