@@ -63,10 +63,6 @@ export default class Game {
     }
   };
 
-  setClickListener(onClick) {
-    this.onClick = onClick;
-  }
-
   start(items) {
     this.started = true;
     sound.playBackground();
