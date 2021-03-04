@@ -15,6 +15,12 @@ export default class Field {
     this.onClick = onClick;
   }
 
+  loadArray() {
+    return fetch('data/data.json')
+      .then((response) => response.json())
+      .then((json) => json.items);
+  }
+  
   displayItems(items) {
     this.gameField.innerHTML = items
       .map((item) => this.createString(item))
