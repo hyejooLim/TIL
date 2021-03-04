@@ -1,4 +1,5 @@
 'use strict';
+import PopUp from './popup.js';
 
 const TIMER = 10;
 const CARROT_COUNT = 9;
@@ -8,9 +9,8 @@ const gameBtn = document.querySelector('.game__btn');
 const gameTimer = document.querySelector('.game__timer');
 const gameScore = document.querySelector('.game__score');
 const gameField = document.querySelector('.game__field');
-const popUp = document.querySelector('.pop-up');
-const popUpMessage = document.querySelector('.pop_up__message');
-const refreshBtn = document.querySelector('.pop-up__refresh');
+
+const gameFinishBanner = new PopUp();
 
 // Fetch data
 function loadArray() {
@@ -18,7 +18,7 @@ function loadArray() {
     .then((response) => response.json())
     .then((json) => json.items);
 }
-loadArray().then((items) => onClick(items));
+loadArray().then((items) => onClickBtn(items));
 
 function displayItems(items) {
   gameField.innerHTML = items.map((item) => createString(item)).join('');
@@ -53,7 +53,7 @@ const looseBgm = new Audio('sound/bug_pull.mp3');
 const winBgm = new Audio('sound/game_win.mp3');
 const alertBgm = new Audio('sound/alert.wav');
 
-function onClick(items) {
+function onClickBtn(items) {
   gameBtn.addEventListener('click', () => {
     if (started) {
       stopGame('resum');
@@ -83,10 +83,9 @@ function stopGame(state) {
   if (state === 'bug') {
     gameBgm.pause();
     alertBgm.play();
-  }
-  else if (state === 'time over') {
+  } else if (state === 'time over') {
     gameBgm.pause();
-    looseBgm.play();  
+    looseBgm.play();
   }
   clearInterval(timer);
   showStartBtn();
@@ -107,7 +106,6 @@ function showStopBtn() {
 function showTimerAndScore() {
   gameTimer.style.visibility = 'visible';
   gameScore.style.visibility = 'visible';
-  gameScore.innerText = `${score}`;
 }
 
 function timerWork() {
@@ -115,7 +113,7 @@ function timerWork() {
   timer = setInterval(() => {
     if (sec <= 0) {
       stopGame('time over');
-      showPopUp('time over');
+      gameFinishBanner.showWithText('Time Over ⏰');
       return;
     }
     sec--;
@@ -140,28 +138,16 @@ gameField.addEventListener('click', (e) => {
       gameBgm.pause();
       winBgm.play();
       stopGame('win');
-      showPopUp('win');
+      gameFinishBanner.showWithText('You win! 🎉');
     }
   } else if (target.matches('.bug')) {
     stopGame('bug');
-    showPopUp('bug');
+    gameFinishBanner.showWithText('You loose! 😢');
   }
 });
 
-refreshBtn.addEventListener('click', () => {
+gameFinishBanner.setClickListener(() => {
   timer = undefined;
   gameBgm.currentTime = 0;
-  popUp.classList.add('pop-up--hidden');
   loadArray().then((items) => startGame(items));
 });
-
-function showPopUp(text) {
-  popUp.classList.remove('pop-up--hidden');
-  if (text === 'bug') {
-    popUpMessage.innerText = 'You loose! 😢';
-  } else if (text === 'win') {
-    popUpMessage.innerText = 'You win! 🎉';
-  } else if (text === 'time over') {
-    popUpMessage.innerText = 'Time Over ⏰';
-  }
-}
