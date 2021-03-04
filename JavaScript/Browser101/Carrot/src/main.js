@@ -1,16 +1,17 @@
 'use strict';
+
 import PopUp from './popup.js';
+import Field from './field.js';
 
 const TIMER = 10;
 const CARROT_COUNT = 9;
-const CARROT_SIZE = '80';
+
+const gameFinishBanner = new PopUp();
+const gameField = new Field();
 
 const gameBtn = document.querySelector('.game__btn');
 const gameTimer = document.querySelector('.game__timer');
 const gameScore = document.querySelector('.game__score');
-const gameField = document.querySelector('.game__field');
-
-const gameFinishBanner = new PopUp();
 
 // Fetch data
 function loadArray() {
@@ -19,28 +20,6 @@ function loadArray() {
     .then((json) => json.items);
 }
 loadArray().then((items) => onClickBtn(items));
-
-function displayItems(items) {
-  gameField.innerHTML = items.map((item) => createString(item)).join('');
-}
-
-function createString(item) {
-  const fieldRect = gameField.getBoundingClientRect();
-  const x1 = 0;
-  const y1 = 0;
-  const x2 = fieldRect.width - CARROT_SIZE;
-  const y2 = fieldRect.height - CARROT_SIZE;
-  const x = randomNumber(x1, x2);
-  const y = randomNumber(y1, y2);
-
-  return `
-    <img src="${item.image}" class="${item.type}" style="position: absolute; left: ${x}px; top: ${y}px" />
-  `;
-}
-
-function randomNumber(min, max) {
-  return Math.random() * (max - min) + min;
-}
 
 let started = false;
 let timer = undefined;
@@ -71,7 +50,7 @@ function startGame(items) {
   if (timer === undefined) {
     sec = TIMER;
     score = CARROT_COUNT;
-    displayItems(items);
+    gameField.displayItems(items);
   }
   showStopBtn();
   showTimerAndScore();
@@ -121,8 +100,7 @@ function timerWork() {
   }, 1000);
 }
 
-// Event delegation
-gameField.addEventListener('click', (e) => {
+gameField.setClickListener((e) => {
   if (!started) {
     return;
   }
