@@ -1,18 +1,23 @@
 'use strict';
 
+import * as sound from './sound.js';
+
 const CARROT_SIZE = 80;
 
-export default class Field {
+export const ItemType = Object.freeze({
+  carrot: 'carrot',
+  bug: 'bug',
+});
+
+export class Field {
   constructor() {
     this.gameField = document.querySelector('.game__field');
     this.fieldRect = this.gameField.getBoundingClientRect();
-    this.gameField.addEventListener('click', (e) => {
-      this.onClick && this.onClick(e);
-    });
+    this.gameField.addEventListener('click', this.onClick);
   }
 
-  setClickListener(onClick) {
-    this.onClick = onClick;
+  setClickListener(onItemClick) {
+    this.onItemClick = onItemClick;
   }
 
   loadArray() {
@@ -20,12 +25,23 @@ export default class Field {
       .then((response) => response.json())
       .then((json) => json.items);
   }
-  
+
   displayItems(items) {
     this.gameField.innerHTML = items
       .map((item) => this.createString(item))
       .join('');
   }
+
+  onClick = (e) => {
+    const target = e.target;
+
+    if (target.matches('.carrot')) {
+      sound.playCarrot();
+      this.onItemClick && this.onItemClick(ItemType.carrot, target);
+    } else if (target.matches('.bug')) {
+      this.onItemClick && this.onItemClick(ItemType.bug, target);
+    }
+  };
 
   createString(item) {
     const x1 = 0;

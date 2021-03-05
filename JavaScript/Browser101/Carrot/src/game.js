@@ -1,12 +1,44 @@
 'use strict';
 
-import Field from './field.js';
+import { Field, ItemType } from './field.js';
 import * as sound from './sound.js';
 
 const TIMER = 5;
 const CARROT_COUNT = 9;
 
-export default class Game {
+export const Reason = Object.freeze({
+  win: 'win',
+  bug: 'bug',
+  timeOver: 'time over',
+});
+
+// Builder Pattern
+export class GameBuilder {
+  withGameTimer(timer) {
+    this.gameTimer = timer;
+    return this;
+  }
+
+  withCarrotCount(num) {
+    this.carrotCount = num;
+    return this;
+  }
+
+  withBugCount(num) {
+    this.bugCount = num;
+    return this;
+  }
+
+  build() {
+    return new Game(
+      this.gameTimer, //
+      this.carrotCount,
+      this.bugCount
+    );
+  }
+}
+
+class Game {
   constructor(gameTimer, carrotCount, bugCount) {
     this.gameTimer = gameTimer;
     this.carrotCount = carrotCount;
@@ -39,27 +71,23 @@ export default class Game {
     });
   }
 
-  onItemClick = (e) => {
+  onItemClick = (item, target) => {
     if (!this.started) {
       return;
     }
-    const target = e.target;
 
-    if (target.matches('.carrot')) {
-      sound.playCarrot();
+    if (item === ItemType.carrot) {
       this.score--;
       this.gameScore.innerText = `${this.score}`;
+      // started = true 일 때에만 당근 제거
       target.remove();
-
       if (!this.score) {
         sound.stopBackground();
         sound.playWin();
-        this.stop('win');
-        this.onGameStop && this.onGameStop('win');
+        this.stop(Reason.win);
       }
-    } else if (target.matches('.bug')) {
-      this.stop('bug');
-      this.onGameStop && this.onGameStop('bug');
+    } else if (item === ItemType.bug) {
+      this.stop(Reason.bug);
     }
   };
 
@@ -77,17 +105,11 @@ export default class Game {
     this.timerWork();
   }
 
-  stop(state) {
+  stop(reason) {
     this.started = false;
-    if (state === 'bug') {
-      sound.stopBackground();
-      sound.playBug();
-    } else if (state === 'time over') {
-      sound.stopBackground();
-      sound.playLose();
-    }
     clearInterval(this.timer);
     this.showStartBtn();
+    this.onGameStop && this.onGameStop(reason);
   }
 
   showStartBtn() {
@@ -105,14 +127,14 @@ export default class Game {
   showTimerAndScore() {
     this.gameTimer.style.visibility = 'visible';
     this.gameScore.style.visibility = 'visible';
+    this.gameScore.innerText = `${this.score}`;
   }
 
   timerWork() {
     this.gameTimer.innerText = `0 : ${this.sec % 60}`;
     this.timer = setInterval(() => {
       if (this.sec <= 0) {
-        this.stop('time over');
-        this.onGameStop && this.onGameStop('time over');
+        this.stop(Reason.timeOver);
         return;
       }
       this.sec--;
