@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--  
+        setTimeout API : 한 번에 하나의 콜백함수가 실행되고 다시 루프를 돌기 때문에
+        콜백함수가 실행되는 와중에 브라우저가 주기적으로 업데이트됨
+    -->
+    <button>Continue with setTimeout</button>
+    <script>
+      function handleClick() {
+        console.log('handle click');
+        setTimeout(() => {
+          console.log('setTimeout');
+          handleClick();
+        }, 0);
+      }
+
+      const btn = document.querySelector('button');
+      btn.addEventListener('click', () => {
+        handleClick();
+      });
+    </script>
+  </body>
+</html>
