@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+      <!--
+          requestAnimationFrame : 화면에 새로운 애니메이션을 업데이트할 준비가 될때마다 이 메소드를 호출
+      -->
+    <button>Request Animation Frame</button>
+    <script>
+      const btn = document.querySelector('button');
+      btn.addEventListener('click', () => {
+        requestAnimationFrame(() => {
+          document.body.style.backgroundColor = 'yellow';
+        });
+        requestAnimationFrame(() => {
+          document.body.style.backgroundColor = 'blue';
+        });
+        requestAnimationFrame(() => {
+          document.body.style.backgroundColor = 'green'; // 최종적으로 green
+        });
+      });
+    </script>
+  </body>
+</html>
