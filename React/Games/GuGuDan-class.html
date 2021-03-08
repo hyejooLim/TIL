@@ -30,13 +30,13 @@
                 firstNum: Math.ceil(Math.random() * 9),
                 secondNum: Math.ceil(Math.random() * 9),
                 value: '',
-                result: '정답 😊 : ' + prevState.value,
+                result: '😊 정답 : ' + prevState.value,
               };
             })
           } else {
               this.setState({
                 value: '',
-                result: '땡! 😢',
+                result: '😢 땡!',
               })
           }
           this.numberInput.focus(); // 입력창에 focus 두기
@@ -47,9 +47,10 @@
             value: e.target.value,
           })
         }
-        // DOM 요소에 접근
-        onRefInput = (input) => {this.numberInput = input;}
-
+        
+        onRefInput = (input) => {this.numberInput = input;} // DOM 요소에 접근
+        
+        // state 변화가 일어나면 render 함수 재실행 
         render() {
           const state = this.state;
           return (
