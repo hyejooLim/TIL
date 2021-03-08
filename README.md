@@ -45,6 +45,7 @@
 #### 💖 Browser101 
   * [WebAPIs](https://github.com/hyejooLim/myLearning/tree/main/JavaScript/Browser101/WebAPIs)
   * [Event](https://github.com/hyejooLim/myLearning/tree/main/JavaScript/Browser101/Event)
+  * [EventLoop](https://github.com/hyejooLim/myLearning/tree/main/JavaScript/Browser101/EventLoop)
   
 <br/><br/>
 
