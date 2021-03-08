@@ -13,23 +13,24 @@
   <body>
     <div id="root"></div>
     <script type="text/babel">
+      // state 변화가 일어나면 GuGuDan 함수 재실행
       const GuGuDan = () => {
         const [firstNum, setFirstNum] = React.useState(Math.ceil(Math.random() * 9));
         const [secondNum, setSecondNum] = React.useState(Math.ceil(Math.random() * 9));
         const [value, setValue] = React.useState('');
         const [result, setResult] = React.useState('');
         const input = React.useRef(null); // DOM 요소에 접근
-        
+
         const onSubmit = (e) => {
           e.preventDefault();
           if (parseInt(value) === firstNum * secondNum) {
             setFirstNum(Math.ceil(Math.random() * 9));
             setSecondNum(Math.ceil(Math.random() * 9));
             setValue('');
-            setResult('정답 😊 : ' + value);
+            setResult('😊 정답 : ' + value);
           } else {
               setValue('');
-              setResult('땡! 😢');
+              setResult('😢 땡!');
           }
           input.current.focus();
         }
