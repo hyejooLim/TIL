@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script> 
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script> 
+    <!-- babel이 태그를 브라우저가 이해할 수 있는 형태로 바꿔줌 -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script> 
+    <title>👾 구구단 게임</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      class GuGuDan extends React.Component {
+        state = {
+          firstNum: Math.ceil(Math.random() * 9),
+          secondNum: Math.ceil(Math.random() * 9),
+          value: '',
+          result: '',
+        }
+        
+        onSubmit = (e) => {
+          e.preventDefault(); // 새로고침 방지 
+          if (parseInt(this.state.value) === this.state.firstNum * this.state.secondNum) {
+            // 함수형 setState
+            this.setState((prevState) => {
+              return {
+                firstNum: Math.ceil(Math.random() * 9),
+                secondNum: Math.ceil(Math.random() * 9),
+                value: '',
+                result: '정답 : ' + prevState.value,
+              };
+            })
+          } else {
+              this.setState({
+                value: '',
+                result: '땡',
+              })
+          }
+          
+          this.input.focus(); // 입력창에 focus 두기
+        }
+
+        onChange = (e) => {
+          this.setState({
+            value: e.target.value,
+          })
+        }
+
+        input;
+        onRefInput = (c) => {this.input = c;}
+
+        render() {
+          const state = this.state;
+          return (
+            <React.Fragment>
+              <div>{state.firstNum} 곱하기 {state.secondNum} 은?</div>
+              <form onSubmit={this.onSubmit}>
+                <input ref={this.onRefInput} type="number" value={state.value} onChange={this.onChange} />
+                <button type="submit">입력</button>
+              </form>    
+              <span>{state.result}</span>
+            </React.Fragment>
+          );
+        }
+      }
+    </script>
+    <script type="text/babel">
+      ReactDOM.render(<GuGuDan />, document.querySelector('#root'));
+    </script>
+  </body>
+</html>
