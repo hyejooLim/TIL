@@ -1,6 +1,7 @@
 # 📚 myLearning
 
-> This repository is about that i learned today<br/><br/>
+> 1일 1 커밋 <br/>
+> 매일 조금이라도 공부하기 <br/>
 
 ## 📂 Algorithm
 ### `C++`
