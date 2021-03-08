@@ -53,14 +53,15 @@
         onRefInput = (c) => {this.input = c;}
 
         render() {
+          const state = this.state;
           return (
             <React.Fragment>
-              <div>{this.state.firstNum} 곱하기 {this.state.secondNum} 은?</div>
+              <div>{state.firstNum} 곱하기 {state.secondNum} 은?</div>
               <form onSubmit={this.onSubmit}>
-                <input ref={this.onRefInput} type="number" value={this.state.value} onChange={this.onChange} />
+                <input ref={this.onRefInput} type="number" value={state.value} onChange={this.onChange} />
                 <button type="submit">입력</button>
               </form>    
-              <span>{this.state.result}</span>
+              <span>{state.result}</span>
             </React.Fragment>
           );
         }
