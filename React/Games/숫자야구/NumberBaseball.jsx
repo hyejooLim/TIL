@@ -1,8 +1,8 @@
 const React = require('react');
-const { useState, useRef } = require('react');
+const { memo, useState, useRef } = require('react');
 const Try = require('./Try');
 
-// 숫자 4개를 중복 없이 랜덤으로 뽑는 함수
+// 숫자 4개를 중복없이 랜덤으로 뽑음 
 function getNumbers() {
   const candidate = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   const array = [];
@@ -13,8 +13,8 @@ function getNumbers() {
   return array;
 }
 
-const NumberBaseball = () => {
-  const [result, setResult] = useState('');
+// memo: 컴포넌트 재렌더링 방지
+const NumberBaseball = memo(() => {
   const [value, setValue] = useState('');
   const [answer, setAnswer] = useState(getNumbers());
   const [elements, setElements] = useState([]);
@@ -25,24 +25,18 @@ const NumberBaseball = () => {
     console.log(answer);
     // 숫자를 맞췄으면
     if (value === answer.join('')) {
-      setResult('홈런 ⚾');
-      setElements((prevElements) => {
-        return [...prevElements, { try: value, result: '홈런  ⚾' }];
-      });
-      alert('게임을 다시 시작합니다.');
-      setResult('');
+      alert('홈런 ⚾');
       setValue('');
       setAnswer(getNumbers());
       setElements([]);
     } else {
       const inputArray = value.split('').map((x) => parseInt(x));
-      let strike = 0;
       let ball = 0;
-      // 10번 이상 틀리면
+      let strike = 0;
+      
+      // 10번 안에 맞추지 못하면
       if (9 <= elements.length) {
-        setResult(`10번 이상 틀렸습니다. 답은 ${answer.join('')}였습니다!`);
-        alert('게임을 다시 시작합니다.');
-        setResult('');
+        alert(`답은 ${answer.join('')} 입니다!`);
         setValue('');
         setAnswer(getNumbers());
         setElements([]);
@@ -72,7 +66,6 @@ const NumberBaseball = () => {
 
   return (
     <>
-      <h1>{result}</h1>
       <form onSubmit={onSubmit}>
         <input
           ref={inputNumber}
@@ -90,6 +83,6 @@ const NumberBaseball = () => {
       </ul>
     </>
   );
-};
+});
 
 module.exports = NumberBaseball;
