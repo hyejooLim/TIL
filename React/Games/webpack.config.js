@@ -20,7 +20,7 @@ module.exports = {
         loader: 'babel-loader',
         options: {
           presets: ['@babel/preset-env', '@babel/preset-react'], // preset: 플러그인들의 모임
-          plugins: ['react-refresh/babel'], // hot reloading
+          plugins: ['react-refresh/babel', '@babel/plugin-proposal-class-properties'], // hot reloading
         },
       },
     ],
