@@ -4,10 +4,16 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script> 
-    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script> 
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
     <!-- babel이 태그를 브라우저가 이해할 수 있는 형태로 바꿔줌 -->
-    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script> 
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
     <title>👾 구구단 게임</title>
   </head>
   <body>
@@ -15,10 +21,14 @@
     <script type="text/babel">
       // state 변화가 일어나면 GuGuDan 함수 재실행
       const GuGuDan = () => {
-        const [firstNum, setFirstNum] = React.useState(Math.ceil(Math.random() * 9));
-        const [secondNum, setSecondNum] = React.useState(Math.ceil(Math.random() * 9));
-        const [value, setValue] = React.useState('');
-        const [result, setResult] = React.useState('');
+        const [firstNum, setFirstNum] = React.useState(
+          Math.ceil(Math.random() * 9)
+        );
+        const [secondNum, setSecondNum] = React.useState(
+          Math.ceil(Math.random() * 9)
+        );
+        const [value, setValue] = React.useState("");
+        const [result, setResult] = React.useState("");
         const input = React.useRef(null); // DOM 요소에 접근
 
         const onSubmit = (e) => {
@@ -26,33 +36,40 @@
           if (parseInt(value) === firstNum * secondNum) {
             setFirstNum(Math.ceil(Math.random() * 9));
             setSecondNum(Math.ceil(Math.random() * 9));
-            setValue('');
-            setResult('😊 정답 : ' + value);
+            setValue("");
+            setResult("😊 정답 : " + value);
           } else {
-              setValue('');
-              setResult('😢 땡!');
+            setValue("");
+            setResult("😢 땡!");
           }
           input.current.focus();
-        }
+        };
 
         const onChange = (e) => {
           setValue(e.target.value);
-        }
+        };
 
         return (
           <React.Fragment>
-            <div>{firstNum} 곱하기 {secondNum} 은?</div>
+            <div>
+              {firstNum} 곱하기 {secondNum} 은?
+            </div>
             <form onSubmit={onSubmit}>
-              <input ref={input} type="number" value={value} onChange={onChange} />
-              <button type="submit">입력</button>
-            </form>    
+              <input
+                ref={input}
+                type='number'
+                value={value}
+                onChange={onChange}
+              />
+              <button type='submit'>입력</button>
+            </form>
             <span>{result}</span>
           </React.Fragment>
-        )
-      }
+        );
+      };
     </script>
     <script type="text/babel">
-      ReactDOM.render(<GuGuDan />, document.querySelector('#root'));
+      ReactDOM.render(<GuGuDan />, document.querySelector("#root"));
     </script>
   </body>
 </html>
