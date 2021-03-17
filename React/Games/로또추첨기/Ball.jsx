@@ -1,6 +1,7 @@
 const React = require("react");
+const { memo } = require("react");
 
-const Ball = ({ winBall }) => {
+const Ball = memo(({ winBall }) => {
   let background;
   if (winBall < 10) {
     background = "red";
@@ -13,12 +14,12 @@ const Ball = ({ winBall }) => {
   } else {
     background = "green";
   }
-  
+
   return (
     <div className='ball' style={{ background }}>
       {winBall}
     </div>
   );
-};
+});
 
 module.exports = Ball;
