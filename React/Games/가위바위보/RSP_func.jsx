@@ -26,8 +26,8 @@ const RSP = () => {
   const interval = useRef();
 
   // imgCoord가 바뀔 때마다 useEffect 실행 
-  // 두 번째 인자 배열이 빈 배열이면 componentDidMount 역할
-  // 두 번째 인자 배열에 값이 들어 있으면 componentDidUpdate 역할 
+  // 두 번째 인자가 빈 배열이면 componentDidMount 역할
+  // 두 번째 인자에 값이 들어 있으면 componentDidMount + componentDidUpdate 역할 
   useEffect(() => { 
     interval.current = setInterval(changeHand, 500);
     return () => { // componentWillUnmount 역할
