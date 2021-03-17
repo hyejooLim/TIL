@@ -25,7 +25,7 @@ const Lotto = () => {
   const [redo, setRedo] = useState(false);
   const timeout = useRef([]);
 
-  // timeout.current가 바뀔 때에만 실행
+  // 처음과 timeout.current가 바뀔 때에만 실행
   useEffect(() => {
     console.log("useEffect");
     showNumbers();
