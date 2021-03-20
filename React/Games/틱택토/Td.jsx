@@ -1,7 +1,7 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, memo } from 'react';
 import { CLICK_CELL } from './TicTacToe';
 
-const Td = ({ rowIndex, columnIndex, dispatch, cellData }) => {
+const Td = memo(({ rowIndex, columnIndex, dispatch, cellData }) => {
   const onClickTd = useCallback(() => {
     // 같은 칸 선택 못함 
     if (cellData) {
@@ -12,6 +12,6 @@ const Td = ({ rowIndex, columnIndex, dispatch, cellData }) => {
   }, [cellData]);
 
   return <td onClick={onClickTd}>{cellData}</td>;
-};
+});
 
 export default Td;
