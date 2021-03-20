@@ -17,7 +17,7 @@ export const CHANGE_TURN = 'CHANGE_TURN';
 export const SET_WINNER = 'SET_WINNER';
 export const RESET_GAME = 'RESET_GAME';
 
-// change state
+// 액션이 디스패치되면 reducer 실행 
 const reducer = (state, action) => {
   switch (action.type) {
     case CLICK_CELL:
