@@ -39,21 +39,6 @@
   * [async](https://github.com/hyejooLim/myLearning/blob/main/JavaScript/Javascript/async/async.js)
   
 
-## 📂 React 
-  * [add_minus](https://github.com/hyejooLim/myLearning/blob/main/JavaScript/React/add_minus.js)
-  * [Like Button](https://github.com/hyejooLim/myLearning/blob/main/React/LikeBtn.html)
- 
-### `Games`
-  * [구구단]
-  * [끝말잇기]
-  * [가위바위보]
-  * [숫자야구]
-  * [반응 속도 체크]
-  * [로또 추첨기]
-  * [틱택토]
-  * [지뢰 찾기]
-  
-
 #### 💖 Browser101 
   * [WebAPIs](https://github.com/hyejooLim/myLearning/tree/main/JavaScript/Browser101/WebAPIs)
   * [Event](https://github.com/hyejooLim/myLearning/tree/main/JavaScript/Browser101/Event)
@@ -75,3 +60,19 @@
 : 제한시간 안에 모든 당근을 찾으면 게임 성공!
 
 </br>
+
+## 📂 React 
+  * [add_minus](https://github.com/hyejooLim/myLearning/blob/main/JavaScript/React/add_minus.js)
+  * [Like Button](https://github.com/hyejooLim/myLearning/blob/main/React/LikeBtn.html)
+ 
+### `Games`
+  * [구구단]()
+  * [끝말잇기]()
+  * [가위바위보]()
+  * [숫자야구]()
+  * [반응 속도 체크]()
+  * [로또 추첨기]()
+  * [틱택토]()
+  * [지뢰 찾기]()
+
+
