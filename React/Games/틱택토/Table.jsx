@@ -7,7 +7,7 @@ const Table = ({ tableData, dispatch }) => {
       {Array(tableData.length)
         .fill()
         .map((tr, i) => (
-          <Tr rowData={tableData[i]} rowIndex={i} dispatch={dispatch} />
+          <Tr key={i} rowData={tableData[i]} rowIndex={i} dispatch={dispatch} />
         ))}
     </table>
   );
