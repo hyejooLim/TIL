@@ -2,7 +2,7 @@ import React, { useReducer, useMemo, createContext, useRef } from 'react';
 import Form from './Form';
 import Table from './Table';
 
-// Context 생성(하위 컴포넌트에게 일일히 props 전달하지 않아도 됨)
+// Context 생성(하위 컴포넌트에 일일이 props 전달하지 않아도 됨)
 export const TableContext = createContext({
   tableData: [],
   stop: true,
