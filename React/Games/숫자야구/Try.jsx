@@ -1,5 +1,4 @@
-const React = require('react');
-const { memo } = require('react');
+import React, { memo } from 'react';
 
 const Try = memo(({ element }) => {
   return (
@@ -10,4 +9,4 @@ const Try = memo(({ element }) => {
   );
 });
 
-module.exports = Try;
+export default Try;

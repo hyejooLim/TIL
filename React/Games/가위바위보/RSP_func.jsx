@@ -1,5 +1,4 @@
-const React = require("react");
-const { useState, useRef, useEffect } = require("react");
+import React, { useState, useRef, useEffect } from 'react';
 
 const rspCoords = {
   가위: "0",
@@ -91,4 +90,4 @@ const RSP = () => {
   );
 };
 
-module.exports = RSP;
+export default RSP;

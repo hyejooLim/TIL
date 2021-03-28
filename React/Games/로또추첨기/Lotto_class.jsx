@@ -1,6 +1,5 @@
-const React = require("react");
-const { Component } = require("react");
-const Ball = require("./Ball");
+import React, { Component } from 'react';
+import Ball from './Ball';
 
 const getNumbers = () => {
   const arr = [];
@@ -91,4 +90,4 @@ class Lotto extends Component {
   }
 }
 
-module.exports = Lotto;
+export default Lotto;

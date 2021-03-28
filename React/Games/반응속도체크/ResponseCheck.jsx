@@ -1,5 +1,4 @@
-const React = require("react");
-const { useState, useRef } = require("react");
+import React, { useState, useRef } from 'react';
 
 const ResponseCheck = () => {
   const [state, setState] = useState("waiting");
@@ -60,4 +59,4 @@ const ResponseCheck = () => {
   );
 };
 
-module.exports = ResponseCheck;
+export default ResponseCheck;

@@ -1,6 +1,5 @@
-const React = require('react');
-const { memo, useState, useRef } = require('react');
-const Try = require('./Try');
+import React, { memo, useState, useRef } from 'react';
+import Try from './Try';
 
 // 숫자 4개를 중복없이 랜덤으로 뽑음 
 function getNumbers() {
@@ -20,7 +19,7 @@ const NumberBaseball = memo(() => {
   const [elements, setElements] = useState([]);
   const inputNumber = useRef(null);
 
-  onSubmit = (e) => {
+ const onSubmit = (e) => {
     e.preventDefault();
     console.log(answer);
     // 숫자를 맞췄으면
@@ -60,7 +59,7 @@ const NumberBaseball = memo(() => {
     inputNumber.current.focus();
   };
 
-  onChange = (e) => {
+  const onChange = (e) => {
     setValue(e.target.value);
   };
 
@@ -85,4 +84,4 @@ const NumberBaseball = memo(() => {
   );
 });
 
-module.exports = NumberBaseball;
+export default NumberBaseball;

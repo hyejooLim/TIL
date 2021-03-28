@@ -1,6 +1,5 @@
-const React = require("react");
-const { useState, useEffect, useRef, useMemo, useCallback } = require("react");
-const Ball = require("./Ball");
+import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
+import Ball from './Ball';
 
 const getNumbers = () => {
   console.log("getNumbers");
@@ -75,4 +74,4 @@ const Lotto = () => {
   );
 };
 
-module.exports = Lotto;
+export default Lotto;

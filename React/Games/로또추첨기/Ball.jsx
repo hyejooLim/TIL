@@ -1,5 +1,4 @@
-const React = require("react");
-const { memo } = require("react");
+import React, { memo } from 'react';
 
 const Ball = memo(({ winBall }) => {
   let background;
@@ -22,4 +21,4 @@ const Ball = memo(({ winBall }) => {
   );
 });
 
-module.exports = Ball;
+export default Ball;
