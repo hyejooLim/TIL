@@ -7,6 +7,7 @@ import React, {
 } from 'react';
 import Form from './Form';
 import Table from './Table';
+import './style.css';
 
 // Context 생성(하위 컴포넌트에 일일이 props 전달하지 않아도 됨)
 export const TableContext = createContext({

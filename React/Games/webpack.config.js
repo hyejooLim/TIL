@@ -1,8 +1,9 @@
 const path = require('path');
 const RefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  name: 'wordRelay-setting',
+  name: 'tictactoe-setting',
   mode: 'development', // 실서비스: production
   devtool: 'eval',
   resolve: {
@@ -23,9 +24,14 @@ module.exports = {
           plugins: ['react-refresh/babel', '@babel/plugin-proposal-class-properties'], // hot reloading
         },
       },
+      {
+        test: /\.css$/,
+        // css loader로 css 불러옴 
+        use: [MiniCssExtractPlugin.loader, 'css-loader']
+      },
     ],
   },
-  plugins: [new RefreshWebpackPlugin()],
+  plugins: [new RefreshWebpackPlugin(), new MiniCssExtractPlugin()],
   // 출력
   output: {
     path: path.join(__dirname, 'dist'),
@@ -33,6 +39,7 @@ module.exports = {
     publicPath: '/dist/',
   },
   devServer: {
+    historyApiFallback: true,
     publicPath: '/dist/', // 수정사항 반영 
     hot: true
   },

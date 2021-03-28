@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import './style.css';
 
 const ResponseCheck = () => {
   const [state, setState] = useState("waiting");
@@ -36,6 +37,7 @@ const ResponseCheck = () => {
 
   const onReset = () => {
     setResult([]);
+    setMessage('화면을 클릭하면 시작합니다.');
   };
 
   const responseAverage = () => {

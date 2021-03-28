@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import './style.css';
 
 const rspCoords = {
   가위: "0",

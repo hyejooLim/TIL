@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
 import Ball from './Ball';
+import './style.css';
 
 const getNumbers = () => {
   console.log("getNumbers");

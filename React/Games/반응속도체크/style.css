@@ -1,0 +1,20 @@
+#screen.waiting {
+  background-color: yellow;
+  width: 250px;
+  height: 200px;
+  text-align: center;
+}
+
+#screen.ready {
+  background-color: red;
+  width: 250px;
+  height: 200px;
+  text-align: center;
+}
+
+#screen.now {
+  background-color: green;
+  width: 250px;
+  height: 200px;
+  text-align: center;
+}

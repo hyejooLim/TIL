@@ -1,5 +1,6 @@
 import React, { useEffect, useReducer } from 'react';
 import Table from './Table';
+import './style.css';
 
 const initialState = {
   winner: '',
