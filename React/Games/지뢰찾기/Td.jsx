@@ -1,4 +1,4 @@
-import React, { useContext, useCallback } from 'react';
+import React, { useContext, useCallback, memo } from 'react';
 import {
   CODE,
   TableContext,
@@ -39,6 +39,7 @@ const getTdStyle = (code) => {
 };
 
 const getTdText = (code) => {
+  console.log('get td text'); // 재렌더링 확인 
   switch (code) {
     case CODE.NORMAL:
       return '';
@@ -53,12 +54,12 @@ const getTdText = (code) => {
     case CODE.QUESTION_MINE:
       return '?';
     default:
-      return code;
+      return code || '';
   }
 };
 
-const Td = ({ rowIndex, columnIndex }) => {
-  const { tableData, stop, dispatch } = useContext(TableContext);
+const Td = memo(({ rowIndex, columnIndex }) => {
+  const { tableData, stop, dispatch } = useContext(TableContext); // Provider의 value를 전달받음
 
   const onClickTd = useCallback(() => {
     if (stop) {
@@ -80,39 +81,55 @@ const Td = ({ rowIndex, columnIndex }) => {
     }
   }, [tableData[rowIndex][columnIndex], stop]);
 
-  // 마우스 오른쪽 클릭 이벤트 
-  const onClickRightTd = useCallback((e) => {
-    e.preventDefault();
-    if (stop) {
-      return;
-    }
-    switch (tableData[rowIndex][columnIndex]) {
-      case CODE.NORMAL:
-      case CODE.MINE:
-        dispatch({ type: FLAG_CELL, row: rowIndex, column: columnIndex });
+  // 마우스 오른쪽 클릭 이벤트
+  const onClickRightTd = useCallback(
+    (e) => {
+      e.preventDefault();
+      if (stop) {
         return;
-      case CODE.FLAG:
-      case CODE.FLAG_MINE:
-        dispatch({ type: QUESTION_CELL, row: rowIndex, column: columnIndex });
-        return;
-      case CODE.QUESTION:
-      case CODE.QUESTION_MINE:
-        dispatch({ type: NORMAL_CELL, row: rowIndex, column: columnIndex });
-        return;
-      default:
-        return;
-    }
-  }, [tableData[rowIndex][columnIndex], stop]);
+      }
+      switch (tableData[rowIndex][columnIndex]) {
+        case CODE.NORMAL:
+        case CODE.MINE:
+          dispatch({ type: FLAG_CELL, row: rowIndex, column: columnIndex });
+          return;
+        case CODE.FLAG:
+        case CODE.FLAG_MINE:
+          dispatch({ type: QUESTION_CELL, row: rowIndex, column: columnIndex });
+          return;
+        case CODE.QUESTION:
+        case CODE.QUESTION_MINE:
+          dispatch({ type: NORMAL_CELL, row: rowIndex, column: columnIndex });
+          return;
+        default:
+          return;
+      }
+    },
+    [tableData[rowIndex][columnIndex], stop]
+  );
+
+  console.log('td rendered'); // row * column 크기만큼 호출 
 
   return (
+    <RealTd
+      onClickTd={onClickTd}
+      onClickRightTd={onClickRightTd}
+      data={tableData[rowIndex][columnIndex]}
+    />
+  );
+});
+
+const RealTd = memo(({ onClickTd, onClickRightTd, data }) => {
+  console.log('RealTd rendered'); // 변화가 일어난 td 개수만큼 재렌더링  
+  return (
     <td
-      style={getTdStyle(tableData[rowIndex][columnIndex])}
+      style={getTdStyle(data)}
       onClick={onClickTd}
       onContextMenu={onClickRightTd}
     >
-      {getTdText(tableData[rowIndex][columnIndex])}
+      {getTdText(data)}
     </td>
   );
-};
+});
 
 export default Td;
