@@ -1,10 +1,9 @@
 # 📚 myLearning
 
 > 1일 1 커밋 <br/>
-> 매일 조금이라도 공부하기 <br/>
+> 매일 성장하기 <br/>
 
-## 📂 Algorithm
-### `C++`
+## 🌻 C++
 [BOJ](https://www.acmicpc.net/) 에서 문제 풀기 
 - [구현](https://github.com/hyejooLim/myLearning/tree/main/Algorithm/C%2B%2B/%EA%B5%AC%ED%98%84)
 - [그래프 탐색](https://github.com/hyejooLim/myLearning/tree/main/Algorithm/C%2B%2B/%EA%B7%B8%EB%9E%98%ED%94%84%20%ED%83%90%EC%83%89)
@@ -17,12 +16,8 @@
 - [수학](https://github.com/hyejooLim/myLearning/tree/main/Algorithm/C%2B%2B/%EC%88%98%ED%95%99)
 - [자료구조](https://github.com/hyejooLim/myLearning/tree/main/Algorithm/C%2B%2B/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0)
 - [재귀](https://github.com/hyejooLim/myLearning/tree/main/Algorithm/C%2B%2B/%EC%9E%AC%EA%B7%80)
-  
-### `Python`
 
-<br/><br/>
-
-## 📂 JavaScript
+## 🌻 JavaScript
 ### `Study`
 #### 💖 Javascript
   * [variable](https://github.com/hyejooLim/myLearning/blob/main/JavaScript/Javascript/variable.js) 
@@ -37,14 +32,11 @@
   * [promise](https://github.com/hyejooLim/myLearning/blob/main/JavaScript/Javascript/async/promise.js)
   * [callback-to-promise](https://github.com/hyejooLim/myLearning/blob/main/JavaScript/Javascript/async/callback-to-promise.js)
   * [async](https://github.com/hyejooLim/myLearning/blob/main/JavaScript/Javascript/async/async.js)
-  
 
 #### 💖 Browser101 
   * [WebAPIs](https://github.com/hyejooLim/myLearning/tree/main/JavaScript/Browser101/WebAPIs)
   * [Event](https://github.com/hyejooLim/myLearning/tree/main/JavaScript/Browser101/Event)
   * [EventLoop](https://github.com/hyejooLim/myLearning/tree/main/JavaScript/Browser101/EventLoop)
-  
-<br/>
 
 ### `Mini Projects`
 
@@ -59,9 +51,11 @@
 - [Carrot](https://github.com/hyejooLim/myLearning/tree/main/JavaScript/Browser101/Carrot)
 : 제한시간 안에 모든 당근을 찾으면 게임 성공!
 
-</br>
+## 🌻 Python
+- [인공지능](https://github.com/hyejooLim/myLearning/tree/main/Python/%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5)
+- [구현](https://github.com/hyejooLim/myLearning/tree/main/Python/%EA%B5%AC%ED%98%84)
 
-## 📂 React 
+## 🌻 React 
   * [add_minus](https://github.com/hyejooLim/myLearning/blob/main/JavaScript/React/add_minus.js)
   * [Like Button](https://github.com/hyejooLim/myLearning/blob/main/React/LikeBtn.html)
  
