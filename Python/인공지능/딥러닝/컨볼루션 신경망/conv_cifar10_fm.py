@@ -8,7 +8,7 @@ from tensorflow.keras.models import Sequential, Model
 from tensorflow.keras.layers import Conv2D, MaxPooling2D, Flatten, Dense, Dropout
 from tensorflow.keras.optimizers import Adam
 
-# MNIST 데이터셋을 읽고 신경망에 입력할 형태로 변환
+# CIFAR-10 데이터셋을 읽고 신경망에 입력할 형태로 변환
 (x_train, y_train), (x_test, y_test) = cifar10.load_data()
 x_train = x_train.astype(np.float32)/255.0
 x_test = x_test.astype(np.float32)/255.0
