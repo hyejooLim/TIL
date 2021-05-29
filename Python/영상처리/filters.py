@@ -234,25 +234,6 @@ plt.axis('off')
 if not (np.max(out_fast - out_nested) < 1e-10):
     print('Different outputs! Check your implementation.')
 
-def conv_faster(image, kernel):
-    """
-    Args:
-        image: numpy array of shape (Hi, Wi).
-        kernel: numpy array of shape (Hk, Wk).
-
-    Returns:
-        out: numpy array of shape (Hi, Wi).
-    """
-    Hi, Wi = image.shape
-    Hk, Wk = kernel.shape
-    out = np.zeros((Hi, Wi))
-
-    ### YOUR CODE HERE
-    pass
-    ### END YOUR CODE
-
-    return out
-
 def cross_correlation(f, g):
     """ Cross-correlation of f and g.
 
