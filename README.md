@@ -53,6 +53,7 @@
 
 ## 🌻 Python
 - [인공지능](https://github.com/hyejooLim/myLearning/tree/main/Python/%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5)
+- [영상처리](https://github.com/hyejooLim/myLearning/tree/main/Python/%EC%98%81%EC%83%81%EC%B2%98%EB%A6%AC)
 - [구현](https://github.com/hyejooLim/myLearning/tree/main/Python/%EA%B5%AC%ED%98%84)
 
 ## 🌻 React 
