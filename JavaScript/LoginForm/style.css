@@ -15,23 +15,22 @@ body {
 
 .loginWrapper {
   width: 300px;
-  padding: 20px 60px 30px;
+  padding: 24px 70px 32px;
   background-color: #2A2A2A;
   color: white;
   text-align: center;
-  border-radius: 50px;
+  border-radius: 40px;
 }
 
 .loginWrapper .logo {
-  margin-bottom: 50px;
+  margin-bottom: 40px;
   letter-spacing: 4px;
   font-size: 35px;
-
 }
 
 .loginWrapper .input_id, 
 .loginWrapper .input_password {
-  padding: 18px 50px;
+  padding: 18px 60px;
   margin: 24px auto;
   border: 1px solid #3A4B5B;
   border-radius: 22px;
@@ -51,10 +50,10 @@ body {
 .loginWrapper .button_login {
   border: none;
   outline: none;
-  padding: 8px 12px;
+  padding: 10px 20px;
   font-size: 15px;
   margin-top: 5px;
-  border-radius: 5px;
+  border-radius: 50px;
   translate: transform 300ms ease-in;
 }
 
@@ -62,5 +61,5 @@ body {
   cursor: pointer;
   background: #37B462;
   color: white;
-  transform: scale(1.1);
+  transform: scale(1.2);
 }
