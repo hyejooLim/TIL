@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>반응형 헤더</title>
+  <style>
+    div {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 0 200px;
+      box-sizing: border-box;
+    }
+    div nav {
+      border-bottom: 1px solid #ddd;
+      text-align: center;
+      font-size: 0;
+      position: relative;
+      z-index: 20;      
+      padding-top: 30px;
+    }
+    div nav:hover + div {
+      height: 300px;
+      opacity: 1;
+    }
+    div nav + div {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 0;
+      background: pink;
+      opacity: 0;
+      transition: all .3s;
+      padding: 0 100px;
+      box-sizing: border-box;
+      background-clip: content-box;
+    }
+    div nav > ul {
+      text-align: center;
+      margin: 0 0 10px 0;
+      display: inline-block;
+      overflow: hidden;
+      height: 30px;
+    } 
+    div nav > ul:hover {
+      overflow: visible;
+    }
+    div nav > ul:hover ul {
+      opacity: 1;
+    }
+    div nav ul {
+      padding: 0;
+    }
+    div nav > ul li {
+      list-style: none;
+    }
+    div nav > ul > li {
+      display: inline-block;
+      position: relative;
+    }
+    div nav > ul > li > a {
+      font-size: 15px;
+      display: block;
+      width: 100px;
+      height: 30px;
+      position: relative;
+    }
+    div nav > ul > li a {
+      color: black;
+      text-decoration: none;
+    }
+    div nav > ul > li:hover > a:after {
+      left: 0;
+      width: 100%;
+    }
+    div nav > ul > li > a:after {
+      content: "";
+      width: 0;
+      height: 2px;
+      position: absolute;
+      left: 50%;
+      bottom: -10px;
+      background: #ddd;
+      transition: all .3s;
+    }
+    div nav > ul > li > a:hover:after {
+      width: 100%;
+      left: 0;
+    }
+    div nav > ul ul {
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      padding-top: 30px;
+      opacity: 0;
+      transition: all .3s;
+    }
+    div nav > ul ul a {
+      font-size: 13px;
+      position: relative;
+      transition: all .3s;
+    }
+    div nav > ul ul a:hover {
+      color: #ddd;
+    }
+    div nav > ul ul li {
+      line-height: 35px;
+    }
+    div nav > ul ul li a:after {
+      content: "";
+      width: 0;
+      height: 2px;
+      background: #ddd;
+      position: absolute;
+      bottom: -5px;
+      left: 50%;
+      transition: all .3s;
+    }
+    div nav > ul ul li a:hover:after {
+      width: 100%;
+      left: 0;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <nav>
+      <ul>
+        <li><a href="#a">아이유</a>
+          <ul>
+            <li><a href="#a">블루밍</a></li>
+            <li><a href="#a">너랑나</a></li>
+            <li><a href="#a">팔레트</a></li>
+            <li><a href="#a">이지금</a></li>
+            <li><a href="#a">라일락</a></li>
+          </ul>
+        </li>
+        <li><a href="#a">블랙핑크</a>
+          <ul> 
+            <li><a href="#a">불장난</a></li>
+            <li><a href="#a">마지막처럼</a></li>
+            <li><a href="#a">뚜두뚜두</a></li>
+            <li><a href="#a">휘파람</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <div></div>
+  </div>
+</body>
+</html>
