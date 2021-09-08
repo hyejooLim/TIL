@@ -65,3 +65,5 @@
   * [add_minus](https://github.com/hyejooLim/myLearning/blob/main/React/add_minus.js)
   * [Like Button](https://github.com/hyejooLim/myLearning/blob/main/React/LikeBtn.html)
  
+## 🌻 TypeScript
+ * [1-TYPES](https://github.com/hyejooLim/myLearning/tree/main/TypeScript/1-TYPES)
