@@ -1,5 +1,5 @@
 {
-  // compositon:기능 별로 클래스를 따로 만들어 조합
+  // compositon: 기능 별로 클래스를 따로 만들어 조합
   // decoupling: interface를 통해서 상호작용
   type CoffeeCup = {
     shots: number;

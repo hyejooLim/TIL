@@ -1,6 +1,6 @@
+export type Direction = 'up' | 'right' | 'down' | 'left';
 {
   // Union Types: OR
-  type Direction = 'up' | 'right' | 'down' | 'left';
   function move(direction: Direction) {
     console.log(direction);
   }
