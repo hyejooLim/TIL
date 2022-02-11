@@ -66,4 +66,16 @@
   * [Like Button](https://github.com/hyejooLim/myLearning/blob/main/React/LikeBtn.html)
  
 ## 🌻 TypeScript
- * [1-TYPES](https://github.com/hyejooLim/myLearning/tree/main/TypeScript/1-TYPES)
+ * [1-types](https://github.com/hyejooLim/myLearning/tree/main/TypeScript/1-TYPES)
+ * [2-types-quiz](https://github.com/hyejooLim/myLearning/tree/main/TypeScript/2-TYPES-QUIZ)
+ * [3-oop](https://github.com/hyejooLim/myLearning/tree/main/TypeScript/3-OOP)
+ * [4-oop-project](https://github.com/hyejooLim/myLearning/tree/main/TypeScript/4-OOP-PROJECT)
+ * [5-generic](https://github.com/hyejooLim/myLearning/tree/main/TypeScript/5-GENERIC)
+ * [6-generic-project](https://github.com/hyejooLim/myLearning/tree/main/TypeScript/6-GENERIC-PROJECT)
+ * [7-api](https://github.com/hyejooLim/myLearning/tree/main/TypeScript/7-API)
+ * [8-exception](https://github.com/hyejooLim/myLearning/tree/main/TypeScript/8-EXCEPTION)
+ * [9-utility-types](https://github.com/hyejooLim/myLearning/tree/main/TypeScript/9-UTILITY-TYPES)
+ * [10-javascript](https://github.com/hyejooLim/myLearning/tree/main/TypeScript/10-JAVASCRIPT)
+ * [11-config](https://github.com/hyejooLim/myLearning/tree/main/TypeScript/11-CONFIG)
+
+
