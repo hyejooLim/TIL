@@ -1,0 +1,21 @@
+import { BaseComponent } from '../../component.js';
+
+export class NoteComponent extends BaseComponent<HTMLElement> {
+  constructor(title: string, body: string) {
+    const htmlString = `<section class="note">
+      <h2 class="note__title"></h2>
+      <p class="note__body"></p>
+    </section>`;
+    super(htmlString);
+
+    const titleElement = this.element.querySelector(
+      '.note__title'
+    )! as HTMLHeadElement;
+    titleElement.textContent = title;
+
+    const bodyElement = this.element.querySelector(
+      '.note__body'
+    )! as HTMLParagraphElement;
+    bodyElement.textContent = body;
+  }
+}

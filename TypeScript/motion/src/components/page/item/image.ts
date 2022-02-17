@@ -2,12 +2,11 @@ import { BaseComponent } from '../../component.js';
 
 export class ImageComponent extends BaseComponent<HTMLElement> {
   constructor(title: string, url: string) {
-    const htmlString = 
-    `<section class="image">
+    const htmlString = `<section class="image">
       <div class="image__holder">
         <img class="image__thumbnail" />
       </div>
-      <p class="image__title"></p>
+      <h2 class="image__title"></h2>
     </section>`;
     super(htmlString);
 
@@ -19,7 +18,7 @@ export class ImageComponent extends BaseComponent<HTMLElement> {
 
     const titleElement = this.element.querySelector(
       '.image__title'
-    )! as HTMLParagraphElement;
+    )! as HTMLHeadElement;
     titleElement.textContent = title;
   }
 }
