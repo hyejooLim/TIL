@@ -3,9 +3,12 @@ import { BaseComponent, Component } from '../component.js';
 export interface Composable {
   addChild(child: Component): void;
 }
+type OnCloseListener = () => void;
 
 class PageItemComponent extends BaseComponent<HTMLElement> implements Composable
 {
+  private closeListener?: OnCloseListener;
+
   constructor() {
     const htmlString = `<li class="page-item">
     <section class="page-item__body"></section>
@@ -14,6 +17,11 @@ class PageItemComponent extends BaseComponent<HTMLElement> implements Composable
     </div>
   </li>`;
     super(htmlString);
+
+    const closeBtn = this.element.querySelector('.close')! as HTMLButtonElement;
+    closeBtn.onclick = () => {
+      this.closeListener && this.closeListener();
+    };
   }
 
   addChild(child: Component) {
@@ -22,8 +30,15 @@ class PageItemComponent extends BaseComponent<HTMLElement> implements Composable
     )! as HTMLElement;
     child.attachTo(container, 'afterend');
   }
+
+  setOnCloseListener(listener: OnCloseListener) {
+    this.closeListener = listener;
+  }
 }
-export class PageComponent extends BaseComponent<HTMLUListElement> implements Composable {
+export class PageComponent
+  extends BaseComponent<HTMLUListElement>
+  implements Composable
+{
   constructor() {
     const htmlString = `<ul class="page"></ul>`;
     super(htmlString);
@@ -33,5 +48,8 @@ export class PageComponent extends BaseComponent<HTMLUListElement> implements Co
     const item = new PageItemComponent();
     item.addChild(child);
     item.attachTo(this.element, 'beforeend');
+    item.setOnCloseListener(() => {
+      item.removeFrom(this.element);
+    });
   }
 }
