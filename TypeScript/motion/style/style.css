@@ -33,6 +33,10 @@ label {
   color: var(--text-accent-color);
 }
 
+dialog {
+  border: 0;
+}
+
 * {
   outline: 0;
   box-sizing: border-box;
@@ -118,4 +122,31 @@ footer {
   text-align: center;
   background: var(--bg-main-color);
   border-top: 1px solid var(--border-color);
+}
+
+/* dialog */
+.dialog {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 1.2rem;
+  background-color: var(--document-bg-color);
+}
+
+.dialog__container {
+  display: flex;
+  flex-direction: column;
+  padding: 0.4em;
+  width: 32em;
+  background: var(--bg-accent-color);
+  background: var(--component-bg-gradient);
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  box-shadow: 2px 2px 20px var(--shadow-color);
 }
