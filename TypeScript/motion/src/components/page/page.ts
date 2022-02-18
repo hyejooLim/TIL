@@ -3,9 +3,21 @@ import { BaseComponent, Component } from '../component.js';
 export interface Composable {
   addChild(child: Component): void;
 }
+
+interface SectionContainer extends Component, Composable {
+  setOnCloseListener(listener: OnCloseListener): void;
+}
+
 type OnCloseListener = () => void;
 
-class PageItemComponent extends BaseComponent<HTMLElement> implements Composable
+// 어떠한 인자도 받지 않는 생성자가 호출되면 SectionContainer 인터페이스 규격에 맞는 어떤 클래스든 사용 가능
+type SectionContainerConstructor = {
+  new (): SectionContainer;
+}
+
+export class PageItemComponent
+  extends BaseComponent<HTMLElement>
+  implements SectionContainer
 {
   private closeListener?: OnCloseListener;
 
@@ -39,13 +51,12 @@ export class PageComponent
   extends BaseComponent<HTMLUListElement>
   implements Composable
 {
-  constructor() {
-    const htmlString = `<ul class="page"></ul>`;
-    super(htmlString);
+  constructor(private pageItemConstructor: SectionContainerConstructor) {
+    super(`<ul class="page"></ul>`);
   }
 
   addChild(child: Component) {
-    const item = new PageItemComponent();
+    const item = new this.pageItemConstructor();
     item.addChild(child);
     item.attachTo(this.element, 'beforeend');
     item.setOnCloseListener(() => {
