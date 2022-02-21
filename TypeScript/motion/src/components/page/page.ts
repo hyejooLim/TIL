@@ -13,7 +13,7 @@ type OnCloseListener = () => void;
 // 어떠한 인자도 받지 않는 생성자가 호출되면 SectionContainer 인터페이스 규격에 맞는 어떤 클래스든 사용 가능
 type SectionContainerConstructor = {
   new (): SectionContainer;
-}
+};
 
 export class PageItemComponent
   extends BaseComponent<HTMLElement>
@@ -22,13 +22,12 @@ export class PageItemComponent
   private closeListener?: OnCloseListener;
 
   constructor() {
-    const htmlString = `<li class="page-item">
-    <section class="page-item__body"></section>
-    <div class="page-item__controls">
-      <button class="close">&times;</button>
-    </div>
-  </li>`;
-    super(htmlString);
+    super(`<li class="page-item">
+            <section class="page-item__body"></section>
+            <div class="page-item__controls">
+              <button class="close">&times;</button>
+            </div>
+          </li>`);
 
     const closeBtn = this.element.querySelector('.close')! as HTMLButtonElement;
     closeBtn.onclick = () => {
@@ -40,7 +39,7 @@ export class PageItemComponent
     const container = this.element.querySelector(
       '.page-item__body'
     )! as HTMLElement;
-    child.attachTo(container, 'afterend');
+    child.attachTo(container);
   }
 
   setOnCloseListener(listener: OnCloseListener) {
