@@ -17,6 +17,7 @@ interface SectionContainer extends Component, Composable {
   setOnDragListener(listener: OnDragListener<SectionContainer>): void;
   muteChildren(state: ChildrenState): void;
   getBoundingRect(): DOMRect;
+  onDropped(): void;
 }
 
 // 어떠한 인자도 받지 않는 생성자가 호출되면 SectionContainer 인터페이스 규격에 맞는 어떤 클래스든 사용 가능
@@ -60,18 +61,22 @@ export class PageItemComponent
 
   onDragStart(_: DragEvent) {
     this.notifyDragState('start');
+    this.element.classList.add('drag-element');
   }
 
   onDragEnd(_: DragEvent) {
     this.notifyDragState('end');
+    this.element.classList.remove('drag-element');
   }
 
   onDragEnter(_: DragEvent) {
     this.notifyDragState('enter');
+    this.element.classList.add('drop-zone');
   }
 
   onDragLeave(_: DragEvent) {
     this.notifyDragState('leave');
+    this.element.classList.remove('drop-zone');
   }
 
   notifyDragState(state: DragState) {
@@ -103,6 +108,10 @@ export class PageItemComponent
 
   getBoundingRect(): DOMRect {
     return this.element.getBoundingClientRect();
+  }
+
+  onDropped() {
+    this.element.classList.remove('drop-zone');
   }
 }
 export class PageComponent
@@ -138,11 +147,14 @@ export class PageComponent
     if (this.dropTarget && this.dragTarget !== this.dropTarget) {
       const dropY = event.clientY;
       const dragElement = this.dragTarget.getBoundingRect();
+      
       this.dragTarget.removeFrom(this.element);
       this.dropTarget.attach(
         this.dragTarget,
         dragElement.y < dropY ? 'afterend' : 'beforebegin'
       );
+
+      this.dropTarget.onDropped();
     }
   }
 

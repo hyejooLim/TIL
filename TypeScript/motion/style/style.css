@@ -271,3 +271,21 @@ footer {
 .mute-children * {
   pointer-events: none;
 }
+
+.drag-element {
+  animation: drag_start 250ms;
+  opacity: 0.2;
+}
+
+@keyframes drag_start {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+
+.drop-zone {
+  border: 1px solid var(--accent-color);
+}
