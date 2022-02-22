@@ -266,3 +266,8 @@ footer {
   padding: 1em;
   color: var(--smokywhite);
 }
+
+/* drag and drop */
+.mute-children * {
+  pointer-events: none;
+}
