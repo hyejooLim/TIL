@@ -229,7 +229,7 @@ footer {
   height: 250px;
 }
 
-.mage__holder,
+.image__holder,
 .video__player {
   flex: 60% 1 1;
 }
