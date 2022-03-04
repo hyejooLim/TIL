@@ -69,15 +69,15 @@
  
 ## 🌻 TypeScript
  * [1-types](https://github.com/hyejooLim/myLearning/tree/main/TypeScript/typescript/1-types)
- * [2-types-quiz](https://github.com/hyejooLim/myLearning/tree/main/TypeScript/typescript/2-TYPES-QUIZ)
- * [3-oop](https://github.com/hyejooLim/myLearning/tree/main/TypeScript/typescript/3-OOP)
- * [4-oop-project](https://github.com/hyejooLim/myLearning/tree/main/TypeScript/typescript/4-OOP-PROJECT)
- * [5-generic](https://github.com/hyejooLim/myLearning/tree/main/TypeScript/typescript/5-GENERIC)
- * [6-generic-project](https://github.com/hyejooLim/myLearning/tree/main/TypeScript/typescript/6-GENERIC-PROJECT)
- * [7-api](https://github.com/hyejooLim/myLearning/tree/main/TypeScript/typescript/7-API)
- * [8-exception](https://github.com/hyejooLim/myLearning/tree/main/TypeScript/typescript/8-EXCEPTION)
- * [9-utility-types](https://github.com/hyejooLim/myLearning/tree/main/TypeScript/typescript/9-UTILITY-TYPES)
- * [10-javascript](https://github.com/hyejooLim/myLearning/tree/main/TypeScript/typescript/10-JAVASCRIPT)
- * [11-config](https://github.com/hyejooLim/myLearning/tree/main/TypeScript/typescript/11-CONFIG)
+ * [2-types-quiz](https://github.com/hyejooLim/myLearning/tree/main/TypeScript/typescript/2-types-quiz)
+ * [3-oop](https://github.com/hyejooLim/myLearning/tree/main/TypeScript/typescript/3-oop)
+ * [4-oop-project](https://github.com/hyejooLim/myLearning/tree/main/TypeScript/typescript/4-oop-project)
+ * [5-generic](https://github.com/hyejooLim/myLearning/tree/main/TypeScript/typescript/5-generic)
+ * [6-generic-project](https://github.com/hyejooLim/myLearning/tree/main/TypeScript/typescript/6-generic-project)
+ * [7-api](https://github.com/hyejooLim/myLearning/tree/main/TypeScript/typescript/7-api)
+ * [8-exception](https://github.com/hyejooLim/myLearning/tree/main/TypeScript/typescript/8-exception)
+ * [9-utility-types](https://github.com/hyejooLim/myLearning/tree/main/TypeScript/typescript/9-utility-types)
+ * [10-javascript](https://github.com/hyejooLim/myLearning/tree/main/TypeScript/typescript/10-javascript)
+ * [11-config](https://github.com/hyejooLim/myLearning/tree/main/TypeScript/typescript/11-config)
 
 
