@@ -55,6 +55,8 @@
 : 쇼핑 아이템을 추가하고 삭제함 
 - [Carrot](https://github.com/hyejooLim/myLearning/tree/main/JavaScript/Browser101/Carrot)
 : 제한시간 안에 모든 당근을 찾으면 게임 성공!
+- [motion](https://github.com/hyejooLim/myLearning/tree/main/TypeScript/motion)
+: 타입스크립트 언어를 이용한 모션 프로젝트
 
 ## 🌻 Python
 - [인공지능](https://github.com/hyejooLim/myLearning/tree/main/Python/%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5)
@@ -66,16 +68,16 @@
   * [Like Button](https://github.com/hyejooLim/myLearning/blob/main/React/LikeBtn.html)
  
 ## 🌻 TypeScript
- * [1-types](https://github.com/hyejooLim/myLearning/tree/main/TypeScript/1-TYPES)
- * [2-types-quiz](https://github.com/hyejooLim/myLearning/tree/main/TypeScript/2-TYPES-QUIZ)
- * [3-oop](https://github.com/hyejooLim/myLearning/tree/main/TypeScript/3-OOP)
- * [4-oop-project](https://github.com/hyejooLim/myLearning/tree/main/TypeScript/4-OOP-PROJECT)
- * [5-generic](https://github.com/hyejooLim/myLearning/tree/main/TypeScript/5-GENERIC)
- * [6-generic-project](https://github.com/hyejooLim/myLearning/tree/main/TypeScript/6-GENERIC-PROJECT)
- * [7-api](https://github.com/hyejooLim/myLearning/tree/main/TypeScript/7-API)
- * [8-exception](https://github.com/hyejooLim/myLearning/tree/main/TypeScript/8-EXCEPTION)
- * [9-utility-types](https://github.com/hyejooLim/myLearning/tree/main/TypeScript/9-UTILITY-TYPES)
- * [10-javascript](https://github.com/hyejooLim/myLearning/tree/main/TypeScript/10-JAVASCRIPT)
- * [11-config](https://github.com/hyejooLim/myLearning/tree/main/TypeScript/11-CONFIG)
+ * [1-types](https://github.com/hyejooLim/myLearning/tree/main/TypeScript/typescript/1-types)
+ * [2-types-quiz](https://github.com/hyejooLim/myLearning/tree/main/TypeScript/typescript/2-types-quiz)
+ * [3-oop](https://github.com/hyejooLim/myLearning/tree/main/TypeScript/typescript/3-oop)
+ * [4-oop-project](https://github.com/hyejooLim/myLearning/tree/main/TypeScript/typescript/4-oop-project)
+ * [5-generic](https://github.com/hyejooLim/myLearning/tree/main/TypeScript/typescript/5-generic)
+ * [6-generic-project](https://github.com/hyejooLim/myLearning/tree/main/TypeScript/typescript/6-generic-project)
+ * [7-api](https://github.com/hyejooLim/myLearning/tree/main/TypeScript/typescript/7-api)
+ * [8-exception](https://github.com/hyejooLim/myLearning/tree/main/TypeScript/typescript/8-exception)
+ * [9-utility-types](https://github.com/hyejooLim/myLearning/tree/main/TypeScript/typescript/9-utility-types)
+ * [10-javascript](https://github.com/hyejooLim/myLearning/tree/main/TypeScript/typescript/10-javascript)
+ * [11-config](https://github.com/hyejooLim/myLearning/tree/main/TypeScript/typescript/11-config)
 
 
