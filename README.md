@@ -3,6 +3,8 @@
 > 1일 1 커밋 <br/>
 > 매일 성장하기 <br/>
 
+</br>
+
 ## 🌻 C++
 [BOJ](https://www.acmicpc.net/) 에서 문제 풀기 
 - [구현](https://github.com/hyejooLim/myLearning/tree/main/C%2B%2B/%EA%B5%AC%ED%98%84)
@@ -17,10 +19,13 @@
 - [자료구조](https://github.com/hyejooLim/myLearning/tree/main/C%2B%2B/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0)
 - [재귀](https://github.com/hyejooLim/myLearning/tree/main/C%2B%2B/%EC%9E%AC%EA%B7%80)
 
+</br>
 
 ## 🌻 HTML/CSS
 - [LoginForm](https://github.com/hyejooLim/myLearning/tree/main/HTML:CSS/LoginForm)
 - [header](https://github.com/hyejooLim/myLearning/blob/main/HTML:CSS/header.html)
+
+</br>
 
 ## 🌻 JavaScript
 ### `Study`
@@ -58,14 +63,20 @@
 - [motion](https://github.com/hyejooLim/myLearning/tree/main/TypeScript/motion)
 : 타입스크립트 언어를 이용한 모션 프로젝트
 
+</br>
+
 ## 🌻 Python
 - [인공지능](https://github.com/hyejooLim/myLearning/tree/main/Python/%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5)
 - [영상처리](https://github.com/hyejooLim/myLearning/tree/main/Python/%EC%98%81%EC%83%81%EC%B2%98%EB%A6%AC)
 - [구현](https://github.com/hyejooLim/myLearning/tree/main/Python/%EA%B5%AC%ED%98%84)
 
+</br>
+
 ## 🌻 React 
   * [add_minus](https://github.com/hyejooLim/myLearning/blob/main/React/add_minus.js)
   * [Like Button](https://github.com/hyejooLim/myLearning/blob/main/React/LikeBtn.html)
+ 
+</br>
  
 ## 🌻 TypeScript
  * [1-types](https://github.com/hyejooLim/myLearning/tree/main/TypeScript/typescript/1-types)
